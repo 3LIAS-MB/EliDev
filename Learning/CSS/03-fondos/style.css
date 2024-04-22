@@ -1,0 +1,34 @@
+body {
+    background-color: purple; /*Fondo de color purpura*/
+    background-image: url("img/patron2.jpg"); /*Agregar una imagen de fondo*/
+    background-repeat: no-repeat; /*El fondo no se repite*/
+    background-size: 100%; /*El fondo ocupa el 100% de la pantalla*/
+    background-attachment: fixed; /*El fondo se queda estatico*/
+    background-position: left bottom;
+    
+    color: white;
+    text-align: justify; /*El texto en la pagina se alinea*/
+    text-indent: 15px; /*Le da al texto una identecion de 15px (sangria)*/
+
+    /*word-spacing: 10px; Espacio entre cada palabra
+    letter-spacing: 5px; Espacio entre cada letra*/
+}
+
+#caja {
+    font-family: sans-serif;
+    border: 5px solid black;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    text-align: center; /*Alinea el texto en el centro*/
+    line-height: 20px; /*Cada renglon va a tener  20px de superficie*/
+    text-transform: uppercase; /*Transforma a todo en mayusculas*/
+    text-decoration: underline; /*Subraya el texto*/
+}
+
+h2{
+    color: red;
+    background: white;
+    border: 5px solid red;
+    background-image: url("img/patron1.jpg");
+}

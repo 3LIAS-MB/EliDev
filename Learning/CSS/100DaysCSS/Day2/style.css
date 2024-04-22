@@ -1,0 +1,170 @@
+/* // delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame */
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+
+	overflow: hidden;
+  background: #3FAF82;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	cursor: pointer;
+}
+
+.mainBar{
+	margin: 0;
+}
+
+.mainBar, .firstBar, .lastBar{
+	width: 80px;
+	height: 8px;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 2px 10px rgba(0,0,0, 0.3);
+	margin: 0;
+}
+
+.firstBar, .lastBar{
+	position: absolute;
+	left: 0;
+	content: '';
+	display: block;
+	transform-origin: 50% 50%;
+}
+
+.firstBar {
+	top: -22px;
+}
+
+.lastBar {
+	bottom: -22px;
+}
+
+.open .mainBar{
+	 animation: animationMainBar-1 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.open .firstBar{
+	 animation: animationFirstBar-1 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.open .lastBar{
+	 animation: animationLastBar-1 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.closed .mainBar{
+	 animation: animationMainBar-2 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.closed .firstBar{
+	 animation: animationFirstBar-2 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.closed .lastBar{
+	 animation: animationLastBar-2 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+@keyframes animationMainBar-1 {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes animationMainBar-2 {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationFirstBar-1 {
+	0%{
+		top: -22px;
+	}
+	
+	50%{
+		top: 0;
+		transform: rotate(0)
+	}
+	
+	100%{
+		top: 0;
+		transform: rotate(45deg)
+	}
+}
+
+@keyframes animationFirstBar-2 {
+	0%{
+		top: 0;
+		transform: rotate(45deg)
+	}
+	
+	50%{
+		top: 0;
+		transform: rotate(0)
+	}
+	
+	100%{
+		top: -22px;
+		transform: rotate(0)
+	}
+}
+
+@keyframes animationLastBar-1 {
+	0%{
+		bottom: -22px;
+	}
+	
+	50%{
+		bottom: 0;
+		transform: rotate(0)
+	}
+	
+	100%{
+		bottom: 0;
+		transform: rotate(-45deg)
+	}
+}
+
+@keyframes animationLastBar-2 {
+	0%{
+		bottom: 0;
+		transform: rotate(-45deg)
+	}
+	
+	50%{
+		bottom: 0;
+		transform: rotate(0)
+	}
+
+	100%{
+		bottom: -22px;
+		transform: rotate(0)
+	}
+}
+

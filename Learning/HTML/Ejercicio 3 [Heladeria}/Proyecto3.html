@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Proyecto 3</title>
+</head>
+
+<body>
+<h1>Heladería</h1>
+
+<form action="/ssadasd/"> <!--se tomará una "action" cuando se presione enviar, es decir, cambiara de pagina-->
+
+<fieldset>
+<legend>Datos clientes</legend>
+
+<label>Nombre cliente</label>
+<input type="text" placeholder="---------------"><br>
+
+<label>Telefono cliente</label>
+<input type="number" placeholder="---------------"><br>
+
+<label>Email cliente</label>
+<input type="email" placeholder="---------------"><br>
+</fieldset>
+
+<fieldset>
+    <legend>Elije tu helado</legend>
+    <h2>Sabor</h2>
+
+    <input type="radio" name="sabor" id="vainilla" value="vainilla" checked>
+    <label for="vainilla">Vainilla</label> <br>
+
+    <input type="radio" name="sabor" id="chocolate" value="chocolate">
+    <label for="chocolate">Chocolate</label> <br>
+
+    <input type="radio" name="sabor" id="menta" value="menta">
+    <label for="menta">Menta</label> <br> <br>  
+
+    <h2>Recipiente</h2>
+    <input type="radio" name="recipiente" id="cono" value="cono" checked>
+    <label for="cono">Cono</label> <br>
+
+    <input type="radio" name="recipiente" id="bowl" value="bowl">
+    <label for="bowl">Bowl</label> <br>
+
+    <h2>Bañado en:</h2>
+    <input type="checkbox" name="bañado" id="almendra" value="almendra" checked>
+    <label for="almendra">Almendra</label> <br>
+
+    <input type="checkbox" name="bañado" id="frutilla" value="frutilla">
+    <label for="frutilla">Frutilla</label> <br>
+    
+    <input type="checkbox" name="bañado" id="dulce" value="bañado">
+    <label for="dulce">Dulce de leche</label> <br>
+</fieldset>
+<button>Enviar</button>
+</form>
+
+</body>
+</html>

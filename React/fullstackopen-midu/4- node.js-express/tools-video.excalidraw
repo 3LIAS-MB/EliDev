@@ -1,0 +1,48 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "UXcN9cdNajLZ85hxBywcc",
+      "type": "text",
+      "x": 117.58348665369607,
+      "y": 943.0139548270295,
+      "width": 1413.28125,
+      "height": 518.4,
+      "angle": 0,
+      "strokeColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1430169541,
+      "version": 589,
+      "versionNonce": 822252939,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1709667492872,
+      "link": null,
+      "locked": false,
+      "text": "HERRAMIENTAS UTILIZADAS -> https://github.com/remy/nodemon\n\nnodemon: es una herramienta que nos ayuda a resetear nuestra app si\ndetecta que hay un cambio en nuestro directorio\n\n-> npm install -g nodemon (instalar globlamente)\n-> npm install nodemon -D (dependencia de desarrolo)\n\n\nHay dos tipos de dependencias\n-> de produccion: lo que necesita nuestro proyecto para funcional\n-> de desarrollo: solo lo usamos mientras estamos desarrollando",
+      "fontSize": 36,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 510,
+      "containerId": null,
+      "originalText": "HERRAMIENTAS UTILIZADAS -> https://github.com/remy/nodemon\n\nnodemon: es una herramienta que nos ayuda a resetear nuestra app si\ndetecta que hay un cambio en nuestro directorio\n\n-> npm install -g nodemon (instalar globlamente)\n-> npm install nodemon -D (dependencia de desarrolo)\n\n\nHay dos tipos de dependencias\n-> de produccion: lo que necesita nuestro proyecto para funcional\n-> de desarrollo: solo lo usamos mientras estamos desarrollando",
+      "lineHeight": 1.2
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#121212"
+  },
+  "files": {}
+}

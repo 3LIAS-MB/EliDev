@@ -1,0 +1,64 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 100px;
+    font-style: italic;
+    border: 7px solid saddlebrown;
+}
+
+body {
+    padding-top: 100px;
+}
+div {
+    display: block;
+    /*El ancho se ajusta al contenido y...*/
+}
+
+/*divs que estan dentro de otros divs*/
+/*div div { 
+    height: 100px;
+    width: 100px;
+}*/
+
+.contenedor { 
+    background: blue;
+    /*valor por defecto -> se lo doy porque no quiero que obtenga las propiedades de un div, ya que el contenedor es un div, y estoy modificando todos los divs */
+    position: relative;
+    border: 4px solid black;
+    margin: 50px auto; /*50px en top y bottom, auto en lefy y right*/
+
+    height: 450px;
+    width: 450px;
+    
+}   
+
+.caja1 {
+    background-color: orange;
+    right: 0;
+    bottom: 0;
+}
+
+.caja2 {
+    background-color: green;
+    right: 0;
+    
+}
+.caja3 {
+    background-color: lightblue;
+    top: 0;
+}
+.caja4 {
+    bottom: 0;
+    background-color: red;
+}
+
+.caja5 {
+    /*Para centrar contenedores*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+    margin: auto;
+
+    background-color: chartreuse;
+}
