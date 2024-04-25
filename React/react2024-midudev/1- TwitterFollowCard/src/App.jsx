@@ -14,7 +14,6 @@ const user = [
     isFollowing: true,
   },
   {
-    userName: 'PacoHdez',
     name: 'Paco hdez',
     isFollowing: true,
   },
@@ -48,7 +47,7 @@ function App() {
                 {name}
             </TwitterFollowCard>
           )
-        )
+        )                                                                                                                     
       }
 
       <TwitterFollowCard userName= {name} initialIsFollowing={true}> 
@@ -62,6 +61,15 @@ function App() {
       <TwitterFollowCard userName="pheralb" initialIsFollowing={false}>
         Pablo Hernandez
       </TwitterFollowCard>
+
+      <TwitterFollowCard userName="pheralb" initialIsFollowing={false}>
+        Pablo Hernandez
+      </TwitterFollowCard>
+
+      <TwitterFollowCard userName="pheralb" initialIsFollowing={false}>
+        Pablo Hernandez
+      </TwitterFollowCard>
+
 
       <button onClick={() => setName('pedromichel')}>
         Cambio nombre
