@@ -11,7 +11,7 @@ function App() {
   // Los useState no pueden estar dentroe nada (if, for, etc),
   // solo en el cuerpo del componente. A demás, la inicialización
   // ocurre solo una vez (midudev)
-  const [board, setBoard] = useState(() => {
+    const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem("board");
     if (boardFromStorage) return JSON.parse(boardFromStorage);
     return Array(9).fill(null);
@@ -53,10 +53,10 @@ function App() {
     });
 
     // revisar si hay ganador
-    const newWinnner = checkWinnerFrom(newBoard);
-    if (newWinnner) {
+    const newWinner = checkWinnerFrom(newBoard);
+    if (newWinner) { // devuelve el emoji
       conffeti();
-      setWinner(newWinnner);
+      setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
       setWinner(false); // empate
     }
@@ -64,9 +64,13 @@ function App() {
 
   return (
     <main className="board">
-      <h1>Tic tac toe</h1>
-      <button onClick={resetGame}>Reset del juego</button>
+      <h1>💟💟 SelenE 💟💟</h1>
+      <button onClick={resetGame}>Reset game</button>
       <section className="game">
+
+      {/* element: El valor del elemento actual del array.
+      index (opcional): El índice del elemento actual del array.
+      array (opcional): El array sobre el que se está iterando. */}
         {board.map((square, index) => {
           return (
             <Square
@@ -84,7 +88,6 @@ function App() {
 
       <section className="turn">
         <Square isSelected={turn == TURNS.X}>{TURNS.X}</Square>
-
         <Square isSelected={turn == TURNS.O}>{TURNS.O}</Square>
       </section>
 

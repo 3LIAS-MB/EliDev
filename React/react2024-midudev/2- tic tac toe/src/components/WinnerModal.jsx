@@ -12,7 +12,10 @@ export function WinnerModal ({ winner, resetGame }) {
         <h2> {winnerText} </h2>
 
         <header className='win'>
-          {winner && <Square>{winner}</Square>}
+          {/* // si 'winner' es truthy -> un valor válido distinto de null o false
+           // la expresión sigue evaluándose y se renderiza lo 2do */}
+          {/* {winner && <Square>{winner}</Square>} */}
+          {winner ? <Square>{winner}</Square> : <Square>💀</Square>}
         </header>
 
         <footer>

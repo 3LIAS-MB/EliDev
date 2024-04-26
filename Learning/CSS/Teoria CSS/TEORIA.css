@@ -70,16 +70,22 @@ width: 100px;
     /*Es para que el elemento hijo herede
     la anchura del elemento padre.*/
     width: inherit;
+    /*hace que un elemento tenga un ancho que se ajusta
+    automáticamente al tamaño del contenido dentro de él.
+    En otras palabras, el elemento tendrá el ancho mínimo
+    necesario para contener su contenido sin desbordamiento.*/
+    width: fit-content;
 /*++++++++++++++++++++*/
 height: 100px;
     height: min-content;
     height: max-content;
     /*Es para que el elemento hijo herede
     la altura del elemento padre.*/
-    height: inherit; 
+    height: inherit;
+    height: fit-content;
 /*************************************/
 
-/*Margen (Margin):Es un espacio transparente fuera del borde del elemento. Los márgenes se utilizan para crear espaciado entre elementos.Se puede establecer mediante propiedades como margin-top, margin-right, margin-bottom y margin-left*/
+/*Margen (Margin):Es un espacio transparente fuera del borde del elemento. Los márgenes se utilizan para crear espaciado entre elementos.Se puede establecer mwediante propiedades como margin-top, margin-right, margin-bottom y margin-left*/
 
 /*la distancia que separa una caja de la otra: en vez de separar el texto del borde de la caja (eso hace el padding) nos separa la caja del resto de las cajas // margin(maryen)= margen*/
 margin: 10px;
