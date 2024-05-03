@@ -1,35 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+// useRef es un hook que te permite crear una referencia mutable
+// que persiste entre entre rendes,es util para guardar cualquier valor que
+// puedas mutar, como un identificador, un elemento del DOM, contador, etc
+// y que cada vez que cambia no vuelve a renderizar el contentente
+import { useEffect, useState, useRef } from "react";
+import { useMovies } from "./hooks/useMovies";
+import { Movies } from "./components/Movies";
 
-function App() {
-  const [count, setCount] = useState(0)
+function useSearch() {
+  const [search, updateSearch] = useState("");
+  const [error, setError] = useState(null);
+  const isFirstInput = useRef(true)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  useEffect(() => {
+    if(isFirstInput.current) {
+      isFirstInput.current = search === ''
+      return
+    }
+
+    if (search === "") {
+      setError("No se puede buscar una palabra vacia");
+      return;
+    }
+    if (search.match(/^\d+$/)) {
+      setError("No se puede buscar una pelicula con un número");
+      return;
+    }
+    if (search.length < 3) {
+      setError("La busqueda debe tener almenos 3 caracteres");
+      return;
+    }
+
+    setError(null);
+  }, [search])
+
+  return { search, updateSearch, error };
 }
 
-export default App
+function App() {
+  const { movies } = useMovies()
+  const { search, updateSearch, error } = useSearch();
+
+  const handleSubmit = (event) => {
+    // const value = inputRef.current.value
+
+    // const inputEl = inputRef.current
+    // const value = inputEl.value
+
+    // -> Para varios inputs
+    // const fields = new window.FormData(event.target)
+    // const query = fields.get('query')
+
+    // const { query } = Object.fromEntries(new window.FormData(event.target))
+    event.preventDefault();
+    console.log({ search });
+  };
+
+  // -> Forma controlada
+  const handleChange = (event) => {
+    const newSearch = event.target.value;
+    updateSearch(newSearch);
+    console.log("XDXD")
+    //debouncedGetMovies(newSearch)
+  };
+
+  return (
+    <div className="page">
+      <header>
+        <h1>Buscador de películas</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            style={{
+              border: "1px solid transparent",
+              borderColor: error ? "red" : "transparent",
+            }}
+            onChange={handleChange}
+            value={search}
+            name="query"
+            placeholder="Avengers, Star Wars, The Matrix..."
+          />
+          {/* <input type='checkbox' onChange={handleSort} checked={sort} /> */}
+          <button type="submit">Buscar</button>
+        </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </header>
+
+      <main>
+        <Movies movies={movies} />
+      </main>
+    </div>
+  );
+}
+
+export default App;
