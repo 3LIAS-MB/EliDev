@@ -10,7 +10,7 @@ export function ListOfMovies ({ movies }) {
             <p>{movie.year}</p>
             <img src={movie.image} alt={movie.title} />
           </li>
-        ))
+        ))  
       }
     </ul>
   )

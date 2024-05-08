@@ -28,6 +28,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
    
     width: 100%;
+    /*separacion entre elementos*/
     gap: 32px;
   }
   

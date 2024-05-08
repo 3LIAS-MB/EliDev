@@ -31,7 +31,7 @@ function App() {
   // Pasar todas las props juntas como un objeto -> medio mala practica xd
   // const midudev = { isFollowing: true, userName: 'midudev' } -> {...midudev} -> rest operator
   
-  const [name, setName] = useState('midudev')
+  const [namexd, setName] = useState('midudev')
 
   return (
     <section className='App'> 
@@ -49,7 +49,7 @@ function App() {
         )                                                                                                                     
       }
 
-      <TwitterFollowCard userName= {name} initialIsFollowing={true}> 
+      <TwitterFollowCard userName= {namexd} initialIsFollowing={true}> 
         Miguel Angel Duran
       </TwitterFollowCard>
 
@@ -61,11 +61,11 @@ function App() {
         Pablo Hernandez
       </TwitterFollowCard>
 
-      <TwitterFollowCard userName="pheralb" initialIsFollowing={false}>
+      <TwitterFollowCard userName="pheralbxd" initialIsFollowing={false}>
         Pablo Hernandez
       </TwitterFollowCard>
 
-      <TwitterFollowCard userName="pheralb" initialIsFollowing={false}>
+      <TwitterFollowCard userName="pheralbxddd" initialIsFollowing={false}>
         Pablo Hernandez
       </TwitterFollowCard>
 
