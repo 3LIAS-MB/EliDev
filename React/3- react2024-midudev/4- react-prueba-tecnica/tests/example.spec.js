@@ -1,5 +1,5 @@
 // @ts-check
-import { test, expect } from '@playwright/test' 
+import { test, expect } from '@playwright/test'
 
 const LOCALHOST_URL = 'https://localhost:5173/'
 const CAT_PREFIX_IMAGEN_URL = 'https://cataas.com/cat/says/'
@@ -13,10 +13,10 @@ test('app show random fact and image', async ({ page }) => {
   const textContent = await text.textContent()
   const imageSrc = await image.getAttribute('src')
 
-  console.log({textContent, imageSrc})
+  console.log({ textContent, imageSrc })
   await expect(textContent?.length).toBeGreaterThan(0)
   await expect(imageSrc?.startsWith(CAT_PREFIX_IMAGEN_URL)).toBeTruthy()
-});
+})
 
 // test('get started link', async ({ page }) => {
 //   await page.goto('https://playwright.dev/');

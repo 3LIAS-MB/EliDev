@@ -10,7 +10,7 @@ export function ListOfMovies ({ movies }) {
             <p>{movie.year}</p>
             <img src={movie.image} alt={movie.title} />
           </li>
-        ))  
+        ))
       }
     </ul>
   )
@@ -40,10 +40,10 @@ ListOfMovies.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       year: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
     })
-  ).isRequired,
-};
+  ).isRequired
+}
 
 Movies.propTypes = {
   movies: PropTypes.arrayOf(
@@ -51,7 +51,7 @@ Movies.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       year: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired
     })
-  ).isRequired,
-};
+  ).isRequired
+}

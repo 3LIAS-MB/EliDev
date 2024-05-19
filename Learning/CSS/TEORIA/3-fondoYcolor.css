@@ -1,0 +1,52 @@
+* {
+    /*---------------------------------PROPIEDADES DE FONDO Y COLOR---------------------------------------------*/
+/*background-color: purple; /*Fondo de color purpura*/
+background: purple; /*Fondo de color purpura*/
+background-color: purple;
+/*++++++++++++++++++++*/
+
+/*Crea un gradiente lineal entre dos o más colores, y opcionalmente puedes especificar un ángulo de dirección para el gradiente.*/
+background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%); 
+/*++++++++++++++++++++*/
+
+background-image: url("img/patron2.jpg") repeat-x; /*Agregar una imagen de fondo -> repeat-x define como se repite o extiendo la imagen de fondo*/
+background-image: url("img/patron2.jpg") center-top; /*Agregar una imagen de fondo -> "center-top" define la posicion de la imgen de fondo*/
+background: color url('imagen.jpg') center top; /*Combina varios valores para definir color de fondo, imagen de fondo y posición.*/
+/*++++++++++++++++++++*/
+/*la propiedad CSS background-repeat se utiliza para controlar cómo se repite una imagen de fondo dentro de un elemento HTML. Cuando aplicas una imagen de fondo a un elemento, esta propiedad determina si la imagen se repite en el fondo y, en caso afirmativo, cómo se realiza la repetición.*/
+
+background-repeat: repeat; /*La imagen de fondo se repite tanto horizontal como verticalmente. Este es el valor predeterminado si no se especifica ningún otro valor.*/
+background-repeat: repeat-x; /*La imagen de fondo se repite solo verticalmente.*/
+background-repeat: repeat-y; /*La imagen de fondo se repite solo horizontalmente.*/
+background-repeat: no-repeat; /*El fondo no se repite*/
+/*++++++++++++++++++++*/
+/*La propiedad background-size es especialmente útil cuando deseas controlar cómo se adapta una imagen de fondo a un elemento específico. Puedes usarla para crear efectos visuales, ajustar la relación de aspecto y mejorar la apariencia general de la imagen de fondo en tu diseño web.*/
+
+background-size: auto; /*Tamaño de la imagen de fondo en sus dimensiones originales*/
+background-size: cover; /* La imagen de fondo cubre completamente el área */
+background-size: contain; /* La imagen de fondo se ajusta dentro del área sin recortar */
+background-size: 300px 200px; /* Tamaño de la imagen de fondo con dimensiones específicas */
+background-size: 100%; /*El fondo ocupa el 100% de la pantalla*/
+/*++++++++++++++++++++*/
+/*La propiedad CSS background-attachment se utiliza para controlar si una imagen de fondo se desplaza junto con el contenido de la página o se mantiene fija en su posición mientras el contenido se desplaza.
+Esta propiedad afecta a la relación entre la imagen de fondo y la ventana gráfica de visualización del usuario*/
+
+background-attachment: scroll; /*La imagen de fondo se desplaza con el contenido*/
+background-attachment: fixed; /*La imagen de fondo se mantiene fija en su posición*/
+background-attachment: local; /*La imagen de fondo se desplaza con el scroll interno del elemento*/
+/*++++++++++++++++++++*/
+/*La propiedad CSS background-position se utiliza para controlar la posición inicial de una imagen de fondo dentro de un elemento HTML. Te permite especificar la ubicación donde la imagen de fondo se mostrará inicialmente en relación con el elemento que la contiene.*/
+
+background-position: left top; /*La imagen de fondo se coloca en la esquina superior izquierda */
+background-position: center center; /*La imagen de fondo se centra horizontal y verticalmente */
+background-position: right bottom; /* La imagen de fondo se coloca en la esquina inferior derecha */
+background-position: center bottom; /*Posicioana la imagen en el centro horizontal y en la parte inferior vertical*/
+
+background-position: 50% 25%; /* La imagen de fondo se coloca en el 50% de la anchura y el 25% de la altura */
+
+background-position-x: right; /*Coloca el elemento a la derecha del eje-x*/
+background-position-y: left; /**/
+
+
+
+}

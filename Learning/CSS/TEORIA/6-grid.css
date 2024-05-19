@@ -1,0 +1,272 @@
+/*---------------Gird > CONCEPTOS BASICOS ------------------------
+
+_Grid Container
+_Grid Item
+_Grid Cell
+_Grid Tracks (Column y Row)
+_Grid Area
+
+_Grid Line (Column y Row)
+
+--------PROPIEDADES------------
+grid-template-rows (Gird-container)
+grid-template-columns (Gird-container)
+
+-> unidades "auto" y fr
+-> repeat(cantidad, tamaño/s)
+
+------------------------------------
+grid-row-gap (grid-container)
+grid-column-gap (grid-container)
+
+*SHORTHAND*
+grid-gap: row column (grid-container)
+*LO MISMO*
+gap: row column (grid-container)
+------------------------------------
+grid-row-start (grid-item)
+grid-row-end (grid-item) |
+
+grid-column-start (grid-item)
+grid-column-end (grid-item)
+
+grid-row (grid-item)
+grid-column (grid-item)
+
+------GIRD IMPLÍCITO Y EXPLÍCITO-------
+3 nuevas propiedades del grid implicito
+
+grid-auto-rows (Igual que el template)
+grid-auto-columns (Igual que el template)
+grid-auto-flow: Row (Default), Column y Dense*
+
+---------------GRID DINÁMICO------------------
+minnax()
+min-content
+max-content
+cantidad:
+auto-fill
+auto-fit
+
+--------ALINEACIÓN Y CONTROL DE FLUJO-----------
+diferencia con flex:
+_la alineación es dentro de cada celda y no
+alineación total del flex container
+_cada celda sería un "flex container"
+
+---(Propiedades del grid-container)----
+
+justify-items (horizontalmente)
+align-items (verticalmente)
+
+stretch(default) - start - center - end
+
+place-items: align-items justify-items
+
+
+----------alineación de filas y columnas-------------
+_justify-content (horizontalmente)
+align-content (verticalmente)
+_stretch(default) - start - center - end
+
+mas las de flex:
+"space-arround
+*space-between
+*space-evenly
+
+--------------APLICADO AL grid ITEM-----------------
+_align-self
+_justify-self
+
+_place-self: align-self justify-self
+
+Stretch(default) - start - center - end
+
+_order (igual que en flex)
+
+---------------AREAS EN GRID-----------------
+_Al GRID CONTAINER_
+grid-template-areas: "nombre/s de area/s*;
+
+Al GRID ITEM_
+grid-area: "nombre del area"
+
+------------NOMBRES A LAS LINEAS---------------
+[line-name]
+se puede reemplazar en: GRID-ROW | GRID-COLUMN
+
+---------------SHORTHAND-----------------------
+_Grid-template: row / columns|[ (Grid-container)
+_Grid-template: area unidad
+
+-> grid;
+/*--------------------------------------------------------------------------------------------------------/
+
+
+/*Son propiedades que se utilizan para definir el tamaño
+ y la disposición de las filas y columnas en una cuadrícula.*/
+
+.contenedor {
+    display: grid;
+    grid-template-rows: 50% 100px auto 10vw;
+    /*minmax(300px, 400px): como minimo 300px y como maximo 400px*/
+    /*'mincontent' establece el tamaño minimo de cada una de las celdas*/
+    /*'max-content' establece el tamaño maximo de cada una de las celdas*/
+
+    /*'auto-fill' -> crea columnas invisibles para ir rellenando/
+    /*'auto-fit' -> adapta las columnas existentes para rellenar*/
+    grid-template-columns: 10px repeat(auto-fill, minmax(min-content, max-content)) 10px;
+    grid-template-columns: 1fr repeat(4, minmax(100px, 400px)) 1fr; 
+
+    /* SHORTHAND */
+    grid-template: repeat(3, 1fr);
+    grid-template: 15% 15em auto / 1fr 2fr auto;
+
+
+/*------------------------------------------------------------------------------*/  
+/*La propiedad grid-gap en CSS se utiliza para establecer el espacio entre las filas y columnas en una cuadrícula creada con display: grid. Es un atajo conveniente que combina grid-row-gap y grid-column-gap en una sola propiedad. -> similar a width?*/
+
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /*LO MISMO*/
+    column-gap: 10px;
+    row-gap: 10px;
+
+    /* SHORTHAND*/
+    grid-gap: 10px 20px; /*filas, columnas*/
+    grid-gap: 10px; /*10px para ambos*/
+    /*LO MISMO*/ 
+    gap: 10px;
+/*--------------------------------------------------------------------------------*/
+/*Las propiedades grid-column-start y grid-column-end en CSS Grid se utilizan para especificar la ubicación de inicio y finalización de un elemento en el eje de las columnas dentro de una cuadrícula.
+
+grid-column-start: Define en qué línea de columna debe comenzar un elemento dentro de la cuadrícula.
+grid-column-end: Define en qué línea de columna debe terminar un elemento dentro de la cuadrícula.*/
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    /* SHORTHAND*/
+    grid-column: 1 / 3;
+    grid-row: 3 / span 5; /*    probar span mañana gg*/
+
+    /* .grid-item:nth-child(10) {
+        grid-column: span 3;
+    } */
+/*------------------ELEMENTOS IMPLICITOS-----------------*/
+
+/*-> grid-auto-rows: Define la altura predeterminada de las
+filas generadas automáticamente en la cuadrícula.*/
+    grid-auto-rows: 150px;
+    
+/*-> grid-auto-columns: Define el ancho predeterminado de
+las columnas generadas automáticamente en la cuadrícula*/
+    grid-auto-columns: 1fr;
+
+/*-> grid-auto-flow: Determina cómo se colocan automáticamente los elementos (implicitios) que no tienen una posición explícita definida por grid-column y grid-row. Puede tener los valores row, column, dense u otros*/
+    grid-auto-flow: row;
+    grid-auto-flow: column;
+    grid-auto-flow: dense; /*Rellena los lugares vacios provacados por el grid implicito*/
+
+/*Estas propiedades son útiles cuando tienes elementos en tu cuadrícula que no tienen una posición explícita y se deben colocar automáticamente. grid-auto-rows y grid-auto-columns establecen el tamaño predeterminado de las filas y columnas generadas automáticamente, y grid-auto-flow determina cómo se llenan esas celdas automáticas (ya sea en filas o columnas).*/
+
+/*---------------hasta aca (implicitos)---------------------------------------------------------*/
+
+/*Se aplican a los elementos individuales dentro de la cuadrícula. Controla la alineación en el eje principal (justify-items) afectando a todos los elementos dentro de la cuadrícula..*/
+
+    justify-items: start;
+    justify-items: end;
+    justify-items: center;
+
+    /*Los elementos se estiran para llenar el
+    espacio de la celda en el eje principal.*/
+    justify-items: stretch; /*defecto*/
+
+/*+++++++++++++++++++*/
+/*Se aplican a los elementos individuales dentro de la cuadrícula. Controla en el eje transversal (align-items) afectando a todos los elementos dentro de la cuadrícula.*/
+
+    align-items: start;
+    align-items: end;
+    align-items: center;
+
+    /*Los elementos se estiran para llenar el
+    espacio de la celda en el eje transversal.*/
+    align-items: stretch;
+
+/*SHORTHAND*/
+    /*place-items: <align-items> <justify-items>;*/
+    place-items: center stretch;
+
+/*----------------------------*/ 
+/*Se aplican al contenedor de la cuadrícula en sí, no a los elementos individuales.
+Controla (justify-content) en el espacio disponible dentro del contenedor de la cuadrícula.*/
+
+    justify-content: start;
+    justify-content: end;
+    justify-content: center;
+
+    justify-content: space-around;
+    justify-content: space-between;
+    justify-content: space-evenly;
+
+    justify-content: stretch;
+/*++++++++*/
+/*Se aplican al contenedor de la cuadrícula en sí, no a los elementos individuales. Controla cómo se
+distribuyen las filas (align-content) en el espacio disponible dentro del contenedor de la cuadrícula.*/
+
+    align-content: start;
+    align-content: end;
+    align-content: center;
+
+    align-content: space-around;
+    align-content: space-between;
+    align-content: space-evenly;
+
+    align-content: stretch;
+
+/*-----------------------------------------*/ 
+/*Las propiedades align-self y justify-self en CSS Grid se utilizan para controlar la alineación de un elemento específico dentro de una cuadrícula, anulando las propiedades align-items y justify-items que se aplican al contenedor de la cuadrícula.*/
+
+    /*Controla la alineación del elemento en el eje transversal (vertical) dentro de su 
+    celda en la cuadrícula. Puede tener los valores start, end, center, stretch, y otros.*/
+    align-self: start;
+    align-self: end;
+    align-self: center;
+
+    align-self: stretch;
+/*++++++++*/
+    /*Controla la alineación del elemento en el eje principal (horizontal) dentro de su celda 
+    en la cuadrícula. Puede tener los valores start, end, center, stretch, y otros.*/
+    justify-self: start;
+    justify-self: end;
+    justify-self: center;
+
+    justify-self: stretch;
+
+/*Reemplaza a align-self y justify-self.
+-> Lo hace en una sola linea -> SHORTHAND*/
+
+    /*align, justify*/
+    place-self: end end; 
+/*----------------------------*/
+/*Funciona como en flex-box, es para intercambiar celdas de la cuadricula*/
+    order: 1;
+
+    /*Se le aplica al container*/
+    grid-template-areas:
+    "header header header"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "footer footer fotter";
+
+    /*Se le aplica a los hijos*/
+    grid-area: header;
+    grid-area: main;
+    grid-area: aside;
+    grid-area: footer;
+}

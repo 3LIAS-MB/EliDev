@@ -1,0 +1,189 @@
+* {
+    /*------------------------------------------DISPLAY-----------------------------------------------*/
+/*Combina las características de los elementos block e inline.
+El elemento se comporta como una parte de línea de texto, pero
+también permite controlar su ancho y alto, así como aplicar márgenes y rellenos.*/
+display: inline-block; 
+/*Hace que el elemento se comporte como un bloque y ocupe
+todo el ancho disponible. Los elementos block normalmente
+comienzan en una nueva línea y se apilan verticalmente.*/
+display: block;
+/*Hace que el elemento se comporte como una parte de
+línea de texto. Los elementos inline no generan saltos
+de línea y solo ocupan el espacio necesario para su contenido.*/
+display: inline; 
+/*Hace que el elemento no se muestre en absoluto. El espacio que ocuparía
+se elimina del diseño y otros elementos se ajustan en consecuencia.*/
+display: none; 
+
+    /*------------------FLEX-BOX -> ESTAS PROPIEDADES SE APLICAN AL CONTENEDOR------------------------------*/
+/*Flexbox, o Flexible Box Layout, es un modelo de diseño en CSS que proporciona una manera eficiente de diseñar y organizar elementos en una interfaz de usuario, especialmente cuando se trata de diseño en una sola dimensión, ya sea fila o columna. El objetivo principal de Flexbox es ofrecer una manera más eficiente y predecible de distribuir el espacio entre los elementos y alinearlos de manera flexible, sin importar su tamaño o la cantidad de contenido.*/
+
+/*Para utilizar Flexbox, primero, debes convertir un elemento contenedor en un contenedor flexible, lo que permite 
+controlar la disposición y alineación de sus elementos secundarios utilizando las propiedades Flexbox.*/
+
+display: flex; 
+
+/*Establece el elemento como un contenedor de cuadrícula, lo que permite crear diseños bidimensionales más avanzados utilizando las propiedades Grid.*/
+display: grid; 
+
+/*--------------------**********++++++++++PROPIEDADES DE CONTAINER+++++++++************----------------------*/
+/*+++++++++++++FLEX-DIRECTION++++++++++++++++++*/
+/*La propiedad CSS flex-direction se utiliza en contenedores flexibles (elementos con display: flex o display: inline-flex) para controlar la dirección en la que los elementos secundarios (hijos) se colocan dentro del contenedor y la dirección en la que se distribuyen a lo largo del eje principal.*/
+
+.flex-direction {
+    /*Por defecto. Elementos secundarios en una sola línea horizontal*/
+    flex-direction: row;
+
+    /*Elementos secundarios en una sola línea horizontal en orden inverso*/
+    flex-direction: row-reverse; 
+    /*Elementos secundarios en una sola columna vertical*/
+    flex-direction: column; 
+    /*Elementos secundarios en una sola columna vertical en orden inverso*/
+    flex-direction: column-reverse; 
+}
+
+/*+++++++++++++FLEX-WRAP++++++++++++++++++*/
+/*La propiedad CSS flex-wrap se utiliza en combinación con contenedores flexibles (elementos con display: flex o display: inline-flex) para controlar si los elementos secundarios (hijos) deben ajustarse en una sola línea o si se pueden dividir en varias líneas cuando no haya suficiente espacio horizontal.*/
+
+.flex-wrap {
+    /*(valor predeterminado): Los elementos secundarios se ajustarán en una sola línea, lo que puede causar que se reduzcan en tamaño o se desborden del contenedor padre si no hay suficiente espacio horizontal.*/
+    flex-wrap: nowrap; 
+    /*Los elementos secundarios se ajustarán en varias líneas si no hay suficiente espacio horizontal. Cada línea contendrá tantos elementos como sea posible antes de pasar a la siguiente línea.*/
+    flex-wrap: wrap; 
+    /*Similar a wrap, pero los elementos secundarios se ajustarán en varias líneas en orden inverso, es decir, comenzando desde la última línea y moviéndose hacia arriba.*/
+    flex-wrap: wrap-reverse; 
+}
+/*+++++++++++++FLEX-FLOW++++++++++++++++++*/
+/*FLEX-FLOW REEMPLAZA A FLEX-DIRECTION Y FLEX-WRAP,
+SE LOS PUEDE ESCRBIIR EN UNA SOLA LINEA DE CODIGO*/
+.flex-flow {
+    flex-flow: column wrap;
+}
+
+/*----------------------------JUSTIFY-CONTENT -> EJE HORIZONTAL---------------------------------------*/
+/*La propiedad CSS justify-content se utiliza en contenedores flexibles (elementos con display: flex o display: inline-flex) para controlar cómo se distribuyen y alinean los elementos secundarios (hijos) a lo largo del eje principal (horizontal) del contenedor.*/
+
+/*TODOS LLEVAN "display: flex;"*/
+
+.justify-content {
+    /*Se ubica al principio de la caja que la contiene
+    -> Elementos secundarios alineados al inicio del contenedor*/
+    justify-content: flex-start; 
+    /*Se ubica al final de la caja que la contiene
+    -> Elementos secundarios alineados al final del contenedor*/
+    justify-content: flex-end; 
+    /*Se ubica al centro de la caja que la contiene
+    -> Elementos secundarios alineados en el centro del contenedor*/
+    justify-content: center; 
+    
+    /*No deja margen en los extremos de los contendedores,
+    es decir, estan pegados a la pared*/
+    justify-content: space-between; 
+    /*Deja el MISMO margen de distancia entre los contenedores*/
+    justify-content: space-evenly; 
+    /*Deja un espacio igual al principio y al final pero en los contenedores
+    del medio no porque los pespacios que tienen se suman y crean desproporcion*/
+    justify-content: space-around; 
+}
+
+/*NOTA: SI LE PONEMOS UN "FLEX-DIRECTIOM: COLUM;" TODO ES AL REVES XDDD*/
+
+/*--------------------------------ALIGN ITEMS -> EJE VERTICAL-----------------------------------------*/
+/*La propiedad CSS align-items se utiliza en contenedores flexibles (elementos con display: flex o display: inline-flex) para controlar cómo se alinean los elementos secundarios (hijos) a lo largo del eje secundario (vertical) del contenedor.*/
+
+/*TODOS LLEVAN  "display: flex; -> "*/
+
+.align-items {
+    /*PROPIEDAD POR DEFECTO: Los elementos secundarios se estiran para ocupar todo
+    el espacio disponible a lo largo del eje secundario, lo que puede igualar sus alturas.*/
+    align-items: stretch; 
+
+    /*Los elementos secundarios se alinean en la parte superior del contenedor a lo largo
+    del  eje secundario (vertical) -> e impide que se estiren a lo largo del cross axis. */
+    align-items: flex-start; 
+    /*Los elementos secundarios se alinean en la parte inferior 
+    del contenedor a lo largo del eje secundario (vertical).*/
+    align-items: flex-end; 
+    /*Los elementos secundarios se alinean en el centro del
+    contenedor a lo largo del eje secundario (vertical).*/
+    align-items: center; 
+
+    /*Dalto dice que se usa con wrap-reverse para dar un efecto -> averiguar*/
+    align-items: baseline; 
+}
+/*NOTA: SI LE PONEMOS UN "FLEX-DIRECTIOM: COLUM;" TODO ES AL REVES XDDD*/
+/*Los elementos secundarios se alinean en el centro del contenedor a lo largo del eje secundario (vertical).*/
+/*+++++++++++++++++++++++++++++++*/
+.align-content {
+    /*Se cuando hay más de una linea de items que son flex-content*/
+    align-content: flex-start;
+    align-content: flex-end;
+    align-content: center;
+
+    align-content: space-between;
+    align-content: space-evenly;
+    align-content: space-around;
+
+    align-content: stretch;
+}
+
+/*------------**************+++++++++PROPIEDADES DE LOS ITEMS++++++++************-----------------------------*/
+/*la propiedad CSS align-self se utiliza para controlar la alineación vertical de elementos individuales (hijos) dentro de un contenedor flexible (elemento con display: flex o display: inline-flex). A diferencia de align-items, que se aplica al contenedor para alinear todos los elementos secundarios, align-self se aplica a un elemento secundario específico para cambiar su alineación vertical en relación con los demás elementos secundarios.*/
+
+/*TODOS LLEVAN "display: flex;"*/
+
+.align-self {
+    align-self: flex-start; /*El elemento se alinea en la parte superior del contenedor a lo largo del eje secundario.*/
+    align-self: flex-end; /*El elemento se alinea en la parte inferior del contenedor a lo largo del eje secundario.*/
+    align-self: center; /*El elemento se alinea en el centro del contenedor a lo largo del eje secundario.*/
+
+    align-self: auto; /*(valor predeterminado): Utiliza la alineación definida por el contenedor.*/
+    align-self: stretch; /*El elemento se estira para ocupar todo el espacio disponible a lo largo del eje secundario.*/
+    align-self: baseline; /*El elemento se alinea en la línea base del texto del contenedor a lo largo del eje secundario*/
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+/*+++++++++++++FLEX-GROW++++++++++++++++++*/
+/*La propiedad flex-grow es utilizada para controlar la capacidad de expansión de un
+elemento flexible dentro de un contenedor flexible. Determina cómo se distribuirá el
+ espacio adicional disponible en el contenedor entre los elementos flexibles.
+
+La propiedad flex-grow acepta un valor numérico que representa el factor de crecimiento
+del elemento flexible. Este valor indica la proporción en la que un elemento debe crecer
+en relación con los demás elementos flexibles dentro del mismo contenedor.
+-> Valor predeterminado: flex-grow: 0;*/
+
+.flex-grow {
+    flex-grow: 1; /*1, 2, 3, 4, 5...*/
+}
+/*+++++++++++++FLEX-SHRINK++++++++++++++++++*/
+.flex-shrink {
+    /*La propiedad CSS flex-shrink se utiliza en elementos secundarios (hijos)
+    dentro de un contenedor flexible para controlar cómo se reducen en tamaño
+     en relación con los demás elementos secundarios cuando no hay suficiente
+     espacio disponible en el contenedor -> Nos permite elegir que caja va a
+     ceder más espacio cuando no alcance el lugar disponible*/
+
+    flex-shrink: 0; /*No se reducirán en absoluto y mantendrán su tamaño original*/
+    flex-shrink: 1; /*Los elementos se reducirán igualmente -> valor por defecto*/
+    flex-shrink: 2; /*Este elemento se reducirá más que los demás*/
+}
+/*+++++++++++++FLEX-BASIS++++++++++++++++++*/
+.flex-basis {
+    /*FUNCIONA COMO WIDTH Y HEIGHT PERO EN ITEMS FLEXIBLES*/
+    flex-basis: auto;
+}
+
+/*+++++++++++++FLEX es un shorthand++++++++++++++++++*/
+/*flex-grow, flex-shrink, flex-basis
+-> almenos se debe pasar un parametro*/
+.flex {
+    flex: 1 0 350px;
+    flex: 1;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+/*La propiedad order en CSS se utiliza en el contexto de Flexbox o Grid para especificar el orden visual de un elemento en relación con los demás elementos hijos del mismo contenedor flexible o de cuadrícula. Esta propiedad permite alterar el orden en el que los elementos son mostrados sin modificar el orden del marcado HTML*/
+order: 1;
+order: 10;
+order: 15;
+}

@@ -1,0 +1,14 @@
+/*-------------------------------ESTRUCTURA RESPONSIVE------------------------------------------------*/
+
+/*RESPONSIVE DESIGN - Mobile first*/
+
+@media only screen and (max-width: 500px) {
+    .nav__ul {
+        display: none;
+    }
+    .nav__responsive-ul {
+        display: block;
+    }
+}
+
+/*<meta name="viewport" content="width=device-width, initial-scale=1.0">*/

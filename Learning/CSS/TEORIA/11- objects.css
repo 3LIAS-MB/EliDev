@@ -1,0 +1,42 @@
+/*----------------------------------OBJECT-FIT -> MULTIMEDIA Y VIDEOS---------------------------------*/
+/* La propiedad object-fit permite controlar el tamaño y la posición del contenido
+(<img> o <video>) dentro de su contenedor sin cambiar las dimensiones del contenedor.
+Tiene varios valores que determinan cómo se ajusta el contenido: */
+
+.caja {
+    /*La imagen o el video se estira para llenar completamente el contenedor, sin mantener
+    su relación de aspecto. Esto puede distorsionar la imagen si sus dimensiones originales
+     no coinciden con las del contenedor. */
+    object-fit: fill;
+    /*Hace que el contenido se ajuste dentro de la caja manteniendo sus proporciones originales.
+     El contenido puede queda rodeado por espacios vacíos si la relación de aspecto de la caja
+     no coincide con la relación de aspecto del contenido..*/ 
+    object-fit: contain;
+    /*Hace que el contenido cubra completamente la caja manteniendo sus proporciones originales.
+    Puede recortar parte del contenido si la relación de aspecto de la caja no coincide con la
+     relación de aspecto del contenido.*/
+    object-fit: cover;
+    /*Hace que el contenido se ajuste dentro de la caja sin mantener las proporciones originales.
+     Puede distorsionar el contenido si la relación de aspecto de la caja no coincide con la
+     relación de aspecto del contenido.*/
+    object-fit: none; 
+     /*Hace que el contenido se ajuste dentro de la caja manteniendo sus proporciones originales,
+      pero elige CONTAIN o NONE según cuál resulte en un menor escalado del contenido. 
+      No distorsiona el contenido y evita espacios vacíos innecesarios.*/
+    object-fit: scale-down;
+}
+
+/*----------------------------------OBJECT-POSITION -> MULTIMEDIA Y VIDEOS---------------------------------*/
+/* La propiedad object-position permite especificar las coordenadas donde se colocará el
+ contenido dentro de su contenedor. Por ejemplo, si quieres que el contenido esté más cerca
+ del borde superior izquierdo del contenedor, puedes usar object-position: top left;.
+ Esta propiedad es útil cuando necesitas alinear o ajustar el contenido incrustado
+ dentro de su contenedor de manera precisa. */
+.caja {
+    object-position: 50% 50%; /*defecto (center)*/
+    object-position: left;
+    object-position: right;
+    object-position: top;
+    object-position: bottom;
+    object-position: -4em; /*PX - EM - % - ETC*/
+}

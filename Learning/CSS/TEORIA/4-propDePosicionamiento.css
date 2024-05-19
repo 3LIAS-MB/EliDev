@@ -1,0 +1,32 @@
+* {
+    /*--------------------PROPIEDADES DE POSICIONAMIENTO-------------------------------------------*/
+/*Se utiliza para especificar cómo se posiciona un elemento en el documento. Esta propiedad es fundamental para controlar el layout (disposición) de los elementos en una página, permitiendo ubicarlos exactamente donde se desee, ya sea en relación a su posición normal en el flujo del documento, en relación a su contenedor más cercano con posición no estática, o incluso fijos en relación con el viewport (ventana gráfica). La propiedad position puede tomar varios valores, cada uno con su propio conjunto de reglas sobre cómo se posicionará el elemento:*/
+
+/*(valor predeterminado): El elemento se coloca en su posisción normal dentro del flujo del documento. No se ve afectado por las propiedades de posicionamiento.*/
+position: static;
+
+/*El elemento se posiciona de manera absoluta en relación con su primer ancestro posicionado. Si no hay un ancestro posicionado, se posicionará en relación con el cuerpo del documento (body). A demás en ancho y largo del contenedor se va a ajustar a si mismo almenos que se le de un height o width*/
+position: absolute; 
+/*El elemento se posiciona de manera relativa a su posición normal. Puedes usar las propiedades top, right, bottom y left para desplazarlo desde su posición original*/
+position: relative;
+/*Un elemento con position: fixed se posiciona en relación con la ventana gráfica (viewport) y permanece fijo en esa posición incluso cuando se realiza un desplazamiento (scroll) en la página. Igual que "absolute" se posiciona.*/
+position: fixed;
+  
+
+/*Estas propiedades tienen efecto en los elementos a los que 
+se les haya establecido una posicion, en cualquiera menos static*/
+
+top: 50px; /*prioridad*/
+right: 50px; /*prioridad*/
+bottom: -50px;
+left: -50px;
+
+/*Lo mismo ocurre con z-index, solo no funciona con 'position: static;'. Lo que hace z-index es darle prioridad a los contenedores dependiendo del numero que lleven, para asi poder sobreeponerlos encima del otro*/
+z-index: 50;
+z-index: 100;
+z-index: 150;
+
+/*Para que contenedor padre se pueda sobreponer encima de su
+contenedor hijo, este no debe tener z-index y el hijo lo debe tener en -1 */
+
+}

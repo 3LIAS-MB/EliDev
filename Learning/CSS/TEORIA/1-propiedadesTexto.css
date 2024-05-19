@@ -1,0 +1,56 @@
+* {
+/*------------------------------------PROPIEDADES DE TEXTO----------------------------------------*/
+
+/*font-family(font-femuly)= Familia tipográfica
+/ cursive(cursuvf)= cursiva*/
+font-family: 'Lobster', cursive; 
+/* Al establecer inherit como valor de font-family, el elemento actual tomará la misma fuente que su elemento contenedor.*/
+font-family: inherit;
+
+
+font-weight: normal; /*Establece el grosor de la fuente a su valor normal. Es el valor predeterminado si no se especifica ningún otro valor -> 400.*/
+font-weight: bold; /*Aplica un grosor más grueso a la fuente. Es más oscuro que el grosor normal -> 600*/
+font-weight: lighter; /* Hace que la fuente sea aún más gruesa que el valor bold, si está disponible en la fuente. Si no está disponible, se usará el valor bold.*/
+font-weight: 100px; /*grosor de la letra // font-weight(font wueit)= peso de fuente// weight= el peso*/
+font-size: 30px; /*tamaño de la fuente // font-size(font saiz)= tamaño de fuente // size(zais)= tamaño de fuente*/
+
+font-style: normal; /*El texto se muestra en estilo normal, sin cursiva ni oblicua.*/
+font-style: italic; /*El texto se muestra en cursiva.*/
+font-style: oblique; /* Este valor también muestra el texto en un estilo oblicuo, similar a la cursiva.*/
+
+font-stretch: normal; /*inutil?*/ 
+font-variant: small-caps; /*inutil?*/
+font-kerning: small-caps; /*Controla el espaciado entre caracteres (kerning).*/
+/*-------------------------------------------------*/
+/*La propiedad CSS line-height se utiliza para controlar la altura de línea dentro de un elemento HTML que contiene texto. Define la distancia vertical entre las líneas de texto en un bloque -> modifica el CONTENT*/
+
+line-height: 24px; /*el espacio que ocupa arriba y abajo (1 es por defecto)*/  
+/*-------------------------------------------------*/
+/*La propiedad text-align se utiliza para controlar la alineación horizontal del contenido de texto dentro de un elemento HTML. Puedes aplicar esta propiedad a elementos como párrafos (<p>), encabezados (<h1>, <h2>, etc.), divs u otros elementos que contengan texto.*/
+
+text-align: left; /*Alinea el texto a la izquierda*/
+text-align: center; /*Alinea el texto en el centro*/
+text-align: right; /*Alinea el texto a la derecha */
+text-align: justify; /*Justifica el texto -> lo alinea en la pagina*/
+
+text-indent: 15px; /*Controla la sangría de la primera línea de un bloque de texto.*/
+/*++++++++++++++++++++*/
+/*La propiedad CSS text-transform se utiliza para controlar cómo se transforma el caso del texto dentro de un elemento HTML.
+Esta propiedad te permite aplicar transformaciones a las letras de un texto, como convertirlo todo en mayúsculas, minúsculas o capitalizar la primera letra de cada palabra.*/
+
+text-transform: none; /*No se aplica ninguna transformación al texto*/
+text-transform: uppercase; /*Transforma todo el texto a mayúsculas*/
+text-transform: lowercase; /*Transforma todo el texto a minúsculas*/
+text-transform: capitalize; /*Capitaliza la primera letra de cada palabra*/
+/*++++++++++++++++++++*/
+/*La propiedad CSS text-decoration se utiliza para controlar la decoración del texto, lo que incluye efectos visuales como subrayado, tachado, líneas sobre y líneas a través del texto. Esta propiedad te permite aplicar o quitar estas decoraciones para resaltar o estilizar el contenido textual.*/
+
+text-decoration: none; /*No se aplica ninguna decoración al texto*/
+text-decoration: underline; /*Agrega una línea de subrayado al texto*/
+text-decoration: line-through; /*Agrega una línea a través del texto*/
+text-decoration: underline line-through; /*Agrega tanto una línea de subrayado como una línea a través del texto*/
+
+/**/
+word-spacing: 10px; /*Espacio entre cada palabra*/
+letter-spacing: 5px; /*Espacio entre cada letra*/
+}

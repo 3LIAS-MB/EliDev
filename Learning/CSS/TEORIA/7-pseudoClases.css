@@ -1,0 +1,67 @@
+/*----------------------------------PSEUDOCLASES---------------------------------*/
+/*PSEUDO CLASES SON ELEMENTOS EN LINEA, PERO SE LOS PUEDE CAMBIAR -> QUEDA RE PIOLA CON TRANSISICION (transition)*/
+
+/*Funciona en cualquier elemento, menos en los pseudoelementos*/
+.caja1:hover { 
+    background-color: darkslateblue;
+    color: darkslateblue;
+    height: 200px;
+    width: 200px;
+    border-color: blue;
+    /*transition: all 1s, border 0.5; -> esto deberia estar del otro lado*/
+}
+
+/*Cambia de color a los enlaces, si todavia
+no lo visité se queda en rojo, por ejemplo*/
+.caja1:link { 
+    background-color: black;
+    color: red;
+}
+
+/*Todos los links que ya visite se ponen de color violeta.
+Esta por encima de una clase pero por debajo de un ID*/
+.caja1:visited { 
+    background-color: aliceblue;
+    color: violet;
+}
+
+/*Selecciona un elemento cuando está siendo activado (haciendo clic o manteniendo presionado).
+-> Cambiar estilos momentáneamente para indicar que un botón o enlace está siendo presionado.*/
+.caja1:active { 
+    background-color: red;
+    width: 200px;
+    cursor: row-resize;
+}
+
+/*Cuando el elemento esta seleccionado cambia a lo
+que esta adentro de focus, se usa mucho en los inputs*/
+.caja1:focus  { 
+    background-color: white;
+    padding: 20px;
+    /*transition: background 0.4s, padding 0.4s;*/
+
+    /*Dibujar un contorno alrededor de un elemento, que es visualmente similar a un borde pero no afecta el layout o la posición del elemento. A diferencia de border, el outline no ocupa espacio adicional fuera del elemento; se dibuja sobre el contenido y puede solaparse con otros elementos adyacentes o cercanos.*/
+    outline: 2px solid red; /*ancho, estilo color;*/
+}
+
+/*La pseudoclase :focus-visible en CSS se utiliza para aplicar estilos a un elemento cuando está enfocado, pero solo si el enfoque es visible para el usuario. Esto es especialmente útil para mejorar la accesibilidad y la usabilidad en sitios web.*/
+.caja1:focus-visible {
+    background-color: white;
+}
+
+/*A cualquier elemento que este en español aplica estos elementos
+(tiene que estar espeficicado en su etiqueta html "lang="es"*/
+.caja1:lang(es) { 
+    background-color: red;
+}
+
+/*---------------------------------------CURSOR---------------------------------------------------------*/
+/*CAMBIAR EL CURSOR*/
+.caja {
+    cursor: pointer;
+    cursor: progress;
+    cursor: copy;
+
+    /*HAY UNA PAGINA PARA ELEGIR CURSORES
+    "Lista de valores de cursos css*/
+}

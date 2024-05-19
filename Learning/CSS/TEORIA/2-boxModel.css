@@ -1,0 +1,109 @@
+* {
+    /*------------------------------------BOX MODEL - MODELO DE CAJA------------------------------------------*/
+width: 100px;
+width: min-content;
+width: max-content;
+/*Es para que el elemento hijo herede
+la anchura del elemento padre.*/
+width: inherit;
+/*hace que un elemento tenga un ancho que se ajusta
+automáticamente al tamaño del contenido dentro de él.
+En otras palabras, el elemento tendrá el ancho mínimo
+necesario para contener su contenido sin desbordamiento.*/
+width: fit-content;
+/*++++++++++++++++++++*/
+height: 100px;
+height: min-content;
+height: max-content;
+/*Es para que el elemento hijo herede
+la altura del elemento padre.*/
+height: inherit;
+height: fit-content;
+/*************************************/
+
+/*Margen (Margin):Es un espacio transparente fuera del borde del elemento. Los márgenes se utilizan para crear espaciado entre elementos.Se puede establecer mwediante propiedades como margin-top, margin-right, margin-bottom y margin-left*/
+
+/*la distancia que separa una caja de la otra: en vez de separar el texto del borde de la caja (eso hace el padding) nos separa la caja del resto de las cajas // margin(maryen)= margen*/
+margin: 10px;
+margin: auto;
+margin-top: 15px;
+margin-bottom: 15px;
+margin-left: 15px;
+margin-right: 15px;
+/*Cuando trabajamos con elementos que son bloques de esta forma los centramos
+Es un calculo automatico que hace el navegador*/
+/*++++++++++++++++++++*/
+/*Establece un ancho máximo de 10 píxeles para la caja*/
+max-width: 10px; 
+/*Establece la altura máxima de la caja en 10 píxeles*/
+max-height: 10px; 
+/*Establece la altura mínima del elemento en el 70% de la altura del viewport */
+min-height: 70vh; 
+min-width: 10px;
+
+/*************************************/
+/*Relleno (Padding): Es un espacio transparente alrededor del contenido, entre el contenido y el borde.
+Se puede establecer mediante propiedades como padding-top, padding-right, padding-bottom y padding-left.*/
+
+padding: 25px; /*GENERAL*/
+padding: 20px 30px; /*Top y botton de 20px; Right y left de 30px*/
+padding: 5px, 10px, 15px, 20px; /*Top, right, bottom, left*/
+
+padding-top: 5px;
+padding-right: 10px;
+padding-bottom: 15px;
+padding-left: 20px;
+
+/*************************************/
+/*Borde (Border): Es una línea que rodea el contenido y el relleno. Se puede establecer
+mediante propiedades como border-width, border-style y border-color.*/
+
+/*CADA FUNCION POR SEPARADA. Si no le asignamos un color toma el color del texto*/
+border-color: red;
+border-width: 15px;
+border-style:  solid;
+
+border: none;
+/*++++++++++++++++++++*/
+/*ASIGNA UN BORDE A TODOS LOS LADOS, MAS FACIL K TODO XD*/
+border: 10px solid red; 
+border-top: 10px dashed red;
+border-right: 10px double green;
+
+border-bottom: 10px inset pink;
+border-bottom: 10px outset pink; /*Lo mismo pero invertido*/
+
+border-left: 10px groove orange;
+border-left: 10px ridge orange; /*Lo mismo pero invertido*/
+/*++++++++++++++++++++*/
+/*Si especificamos la direccion (top, en este caso) solo se modifica esa parte*/
+border-top-color: red;
+border-top-width: 15px;
+border-top-style: solid;
+/*++++++++++++++++++++*/
+/*PONER BORDES REDONDEADOS*/
+border-radius: 10px; /*colocar esquina redondeada de forma general*/
+border-radius: 20px 0px 10px 7px; /*Es para poner esquinas redondeadas, un solo valor es para todos los lados*/
+/*++++++++++++++++++++*/
+/*PONER BORDE REDONDEADO EN UNA ESQUINA ESPECIFICA*/
+border-top-left-radius: 50px; /*forma indivudual*/
+border-top-right-radius: 10px; /*forma individual*/
+border-bottom-left-radius: 10px; /*forma individual*/
+border-bottom-right-radius:10px; /*forma individual*/
+/*++++++++++++++++++++*/
+/*ME LO QUEDO POR LAS PALABRAS CLAVES NOMAS XD*/
+border-width: 10px 5px 3px 2px; /*un solo valor equivale para todos los lados: */
+border-width: thin; /*es el valor más pequeño que recibe el borde*/
+border-width: medium; /*valor medio*/
+border-width: thick; /*valor grande*/
+
+/*diferentes colores en top, right, bottom, left. Se puede usar rgb, hex, etc*/
+border-color: crimson hotpink gold lime; 
+
+/*************************************/
+/*content-box es el modelo de caja predeterminado en CSS. El ancho y la altura especificados se aplican al contenido del elemento, y cualquier relleno, borde o margen añadido aumenta el tamaño total del elemento.*/
+box-sizing: content-box; 
+
+/*NO deja que el alto y ancho sea mayor al valor especificado en la caja. Este incluye para su tamaño el contenido, el padding (relleno) y el borde exterior, pero excluyendo el margen. Todo se ajusta en consecuencia. */
+box-sizing: border-box; 
+}

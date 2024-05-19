@@ -32,6 +32,6 @@ export function App () {
           alt={`Image extracted using the first rhee words for ${fact}`}
         />
       )}
-    </main> 
+    </main>
   )
 }

@@ -1,0 +1,41 @@
+/*-----------------------------PSEUDOELEMENTOS -> INTERACCION CON LOS COLORES DE TEXTO--------------*/
+/*CAMBIA TODA LA PRIMERA LINEA DE TEXTO -> FORMA PARTE DEL DOOM*/
+/*FUNCIONA CON TODOS LOS DISPLAY MENOS CON EL INLINE*/
+.hola::first-line  {  
+    color: blue;
+} 
+/*CAMBIA LA PRIMERA LETRA -> FORMAN PARTE DEL DOOM*/
+/*FUNCIONA CON TODOS LOS DISPLAY MENOS CON EL INLINE*/
+::first-letter { 
+    color: blue;
+}
+/*++++++++++++++++++++*/
+/*SIRVE PARA CAMBIAR EL ESTILO DEL PLACEHOLDER*/
+input::placeholder {
+    color: red;
+    font-size: 20px;
+}
+/*++++++++++++++++++++*/
+/*TE DEJA ELEGIR EL COLOR AL SELECCIONAR UN ELEMENTO O TEXTO -> EL POR DEFECTO ES EL AZUL*/
+p::selection {
+    color: aqua;
+    background-color: yellow;
+}
+/*++++++++++++++++++++*/
+/*CAMBIA EL COLOR DE lOS PUNTITOS DE LAS LISTAS 'LI'*/
+li::marker {
+    color: red;
+}
+/*++++++++++++++++++++*/
+/*Los pseudoelementos que requieren de la etiqueta CONTENT no forman
+parte del DOM, lo que significa que no se pueden seleccionar con JavaScript
+y no se representan en el árbol DOM. Sin embargo, son visibles en la
+presentación del documento. -> funciona en elementos en linea y en bloque*/
+
+b::after { 
+    content: "Me suscribi a"
+}
+
+b::before {
+    content: "Todo tendencia"
+}
