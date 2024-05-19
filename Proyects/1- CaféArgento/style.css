@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Tilt+Prism&display=swap');
+
+* {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box; /*No deja que el ancho y largo sea mayor al especificado*/
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px; /*Agregar un maximo de ancho a todos las clases "container"*/
+    margin: 0 auto; /*Usando auto en el margen horizontal, puedes centrar un elemento dentro de su contenedor*/
+}
+
+.header {
+    background-image: linear-gradient( /*Linear-gradient para agregar un degradado semi transparente a la imagen*/
+        rgba(0,0,0,0.7),    
+        rgba(0,0,0,0.7)),
+        url(images/bg.jpg);
+    background-position: center bottom; /*Posicioana la imagen en el centro horizontal y en la parte inferior vertical*/
+    background-repeat: no-repeat;
+    background-size: cover; /*La imagen de fondo se ajusta de manera que cubra completamente el área del elemento contenedor sin distorsionarla*/
+    min-height: 70vh;
+    display: flex; /*Se les aplica a los hijos directos, en este caso, los dos "div"*/
+    align-items: center; /*Alinea el header de manera vertical*/
+}
+
+.menu {
+    position: absolute; /*Posiciona un elemento en base a otro elemento*/
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #FFFDFC;
+    font-size: 25px;/*Tamaño de la fuente*/
+    font-weight: 800; /*Grosor de la fuente*/
+}
+
+.menu .navbar ul li { /*selector de descendencia (descendant selector) */
+    position: relative; /*Posiciona un elemento en un determinado lugar pero sin que este fijo*/
+    float: left; /*Los elementos se alinean horizontalmente a la izquierda*/
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    color: #FFFDFC;
+    padding: 20px;
+    display: block; /*display block para que el padding se coloque correctamente*/
+    font-weight: 600;
+}
+.menu .navbar ul li a:hover {
+    color: #CE967B;
+}
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer; /*Pone la manita cada vez que tocamos la imagen*/
+    display: none;
+}
+
+.header-content {
+    text-align: center; /*Alinea el texto en el centro*/
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #CE967B;
+    color: #F9FAFC;
+    text-transform: uppercase;
+}
+
+.btn-1:hover {
+    background-color: #ebad8d;
+}
+
+/**/
+
+.coffee {
+    padding: 100px 0;
+    background-color: #e1e2e6;
+    position: relative;
+}
+
+.coffee-content {
+    text-align: center;
+}
+
+.coffee-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323327;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.txt-p {
+    font-size: 16px;
+    color: #414247;
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+
+.coffee-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.coffee-1 {
+    padding: 0 25px;
+}
+
+.coffee-1 img {
+    width: 200px;
+}
+
+.coffee-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.coffee-1 h3 {
+    color: #323337;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/**/
+
+.services {
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)),
+        url(images/bg2.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0; /*100px hacia arriba, izq y derch 0*/
+}
+
+.services-content {
+    text-align: center;
+}
+
+.services-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.services-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.services-1 {
+    padding: 0 100px;
+}
+
+.services-1 img {
+    width: 25px;
+    margin-bottom: 15px;
+}
+
+.services-1 h3 {
+    color: #EACCB3;
+    font-size: 18px;
+}
+
+/**/
+
+.general {
+    display: flex;
+}
+
+.general-1 {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.general-2 {
+    background-image: url(images/coffe-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.general-3 {
+    background-image: url(images/coffee-2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+h2 {
+    font-size: 55px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+}
+
+/**/
+
+.blog {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-1 {
+    padding: 15px 55px;
+}
+
+.blog-1 img {
+    width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15ox;
+}
+
+.blog-1 h3 {
+    font-size: 25px;
+    color: #323337;
+}
+
+/**/
+
+.footer {
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link h3 {
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a {
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/**/
+
+@media(max-width:991px) {
+
+    .menu {
+        padding: 30px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+    
+    .menu .navbar {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+    
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    /**/
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 100px 30px;
+    }
+
+    .header-content p{
+        padding: 0;
+    }
+
+    /**/
+
+    .coffee {
+        padding: 30px;
+    }
+
+    .coffee-content h2 {
+        padding: 0;
+    }
+
+    .txt-p {
+        padding: 0;
+    }
+
+    .coffee-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .coffee-img {
+        display: none;
+    }
+
+    /**/
+
+    .services {
+        padding: 30px;
+    }
+
+    .services-content p {
+        padding: 0;
+    }
+
+    .services-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .services-1 {
+        margin-bottom: 25px;
+    }
+
+    /**/
+
+    .general {
+        flex-direction: column;
+    }
+
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-2, .general-3 {
+        display: none;
+    }
+
+    .blog {
+        padding: 30px;
+    }
+
+    .blog-content {
+        flex-direction: column;
+    }
+
+    .blog-1 {
+        padding: 0;
+    }
+
+    /**/
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
