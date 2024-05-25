@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react'
 
 const CAT_PREFIX_IMAGE_URL = 'https://cataas.com/cat/says/'
 
-// custom hook -> se pueden usar todos los
-// hooks de react dentro de él
+// custom hook -> se pueden usar todos los  hooks de react dentro de él, empieza con
+// la palabra 'use' para identificarlo. es como una caja negra porque no necesitamos
+// saber lo que hay dentro de él, solo que devuelve la imagen. -> no puede estar dentro
+// de un 'if', 'while', tiene q ser llamado desde el cuerpo del componente
+
+// La diferencia entre un custom hook y una funcion es que en el custom hook
+// puede usar hooks dentro de él y una función no
 export function useCatImage ({ fact }) {
   const [imageUrl, setImageUrl] = useState()
 
@@ -15,7 +20,7 @@ export function useCatImage ({ fact }) {
 
     const threeFirstWords = fact.split(' ', 3).join(' ')
     // const threeFirstWord = fact.split(' ')[0].slice(0, 3).join(' ')
-    // console.log(threeFirstWord);
+    // console.log(threeFirstWord); 
 
     fetch(`https://cataas.com/cat/says/${threeFirstWords}?size=50&color=red&json=true`)
       .then(res => res.json())

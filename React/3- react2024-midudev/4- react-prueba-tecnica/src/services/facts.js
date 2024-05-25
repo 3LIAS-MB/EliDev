@@ -1,6 +1,6 @@
 const CAT_ENDPOINT_RANDOM_FACT = 'https://catfact.ninja/fact'
 
-// no puedas usar react query, SWR, axios, apolo
+// no puedes usar react query, SWR, axios, apolo
 // export const getRandomFact = () => {
 //     return fetch(CAT_ENDPOINT_RANDOM_FACT)
 //     .then((res) => res.json())

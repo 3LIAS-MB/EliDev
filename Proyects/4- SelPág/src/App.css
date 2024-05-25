@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;800&family=Tilt+Prism&display=swap');
+
 body {
   background-image: url(./img/background1.jpg);
-  font-family: "Poetsen One", sans-serif;
-
-  /* background-filter: brightness(0.8); */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  
+  margin: 25px solid red;
 }
 .app {
   box-sizing: border-box;
-  width: 50%;
+  width: 60%;
   height: auto;
   margin: auto;
 
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 #canvas {
@@ -26,21 +31,19 @@ body {
 .section-img {
   box-sizing: border-box;
   background-size: cover;
-  margin: auto;
-  margin-top: 30px;
 
-  border: 4px solid green;
 }
 
-.section-img .img {
+.section-img .img-torta {
+  position: absolute;
+  width: 55px;
+  left: 44%;
+  bottom: 22%;
+}
+
+.section-img .img-hand {
     width: 100%;
-}
-
-.section-img h1 {
-  text-align: center;
-  font-size: 30px;
-  letter-spacing: 3px;
-  margin-bottom: 5px;
+    
 }
 
 .balloon {
@@ -97,7 +100,8 @@ body {
   top: 153px;
   position: absolute;
   height: 120px;
-  width: 1px;
+  width: 1.5px;
+  opacity: .9px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -114,7 +118,7 @@ body {
   padding: 10px 40px;
   font-weight: bold;
   font-size: 15px;
-  background: rgb(189, 62, 168);
+  background: palevioletred;
   cursor: pointer;
   border: none;
   z-index: 10;  
@@ -130,11 +134,21 @@ body {
 
 .article-card {
   text-align: center;
-  border: 4px solid red;
+  background-color: palevioletred;
+  border-radius: 5px;
 }
 
-.article-card img {
-  width: 100%;
+.article-card .article-h1 {
+  padding: 20px;
+  margin: 0;
+  color: rgb(92, 27, 70);
+  border: 1px solid rgb(186, 102, 128);
+}
+
+.article-card .article-p {
+  padding: 20px;
+  margin: 0;
+  border: 1px solid rgb(186, 102, 128);
 }
 
 
@@ -145,4 +159,36 @@ body {
   100% {
     bottom: 100%;
   }
+}
+
+@media(max-width: 600px) {
+  .app {
+    width: 80%;
+  }
+  
+  .balloon {
+    width: 70px;
+    height: 83px;
+    margin: 10px 15px;
+  }
+  
+  /* .balloon.none {
+      visibility: hidden;
+  } */
+  
+
+  .balloon:after {
+    top: 90px;
+    height: 110px;
+    width: 1.5px;
+    right: 0;
+    left: 0;
+    opacity: .9;
+  }
+  
+  
+  .article-card .article-h1 {
+    font-size: 20px;
+  }
+  
 }

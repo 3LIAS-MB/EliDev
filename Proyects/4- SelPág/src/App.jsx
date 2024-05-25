@@ -32,7 +32,7 @@ function App() {
     return (
       <div>
         <audio autoPlay>
-          <source src="src/music/Celofan.mp3" type="audio/mpeg" />
+          <source src="/music/yaNoMiresAtras.mp3" type="audio/mpeg" />
         </audio>
       </div>
     );
@@ -74,9 +74,55 @@ function App() {
       {show ? (
         <>
           <Audio />
+          <article className="article-card">
+            <h1 className="article-h1">
+              FE-FE-FE-FE-FELIZ CUMPLEEEEEEEEEEEEE!
+            </h1>
+            <p className="article-p">
+              En este día te quiero agradecer por todo formar parte de mi vida.
+              Muchas personas pueden pasar por mi vida, pero pocas marcarme como
+              lo hiciste vos. Quiero hacerte saber lo importante que sos, y que
+              en este punto, ya formas parte de mí, que te guardo y resguardo en
+              mi conciencia. Sos especial. Gracias por hacerme amar de nuevo, y
+              gracias por corresponderlo.
+              <br />
+              <br />
+              No me olvido todo lo que hiciste por mí, es algo que de verdad
+              aprecio. Estoy orgulloso de ser parte de tus textos, de formar
+              parte de tu inspiración y creatividad. Gracias por acordarte de
+              mí, de tenerme tanto cariño y de mostrarmelo todos los días,
+              incluso cuando yo no estuve.
+              <br />
+              <br />
+              Pienso que sos alguien grandiosa, que me enseñó y me sigue
+              enseñando mucho, aprendo mucho de vos; espero poder
+              retroalimentarnos tanto como podamos. Me gusta tu forma tan
+              particular de ser, es algo que me atrae y me genera curiosad,
+              porque sos interesante. Me gustan tus historias, tus ocurriencias
+              y tus sueños, porque sos soñadora.
+              <br />
+              <br />
+              Desde el amor que te tengo deseo que cumplas todos tus objetivos,
+              tus metas a corto y largo plazo, tus proyectos; que vivas una
+              buena vida aunque no sea conmigo, que seas feliz. Incluso si
+              alguna vez decidimos ya no compartir tiempo de vida, siempre vas a
+              contar conmigo, porque siempre voy a querer que estés bien, porque
+              te lo mereces. Sé fuerte en los momentos dificiles, aprendé de
+              ellos, construí tú futuro, predecilo. No está mal decaer, pero sí
+              no volver a levantarse, tenés que ser fuerte.
+              <br />
+              <br />
+              Espero seguir siendo parte de tú vida hasta que me lo permitas.
+              Voy a disfrutar el proceso y de tu compania. Me voy a esforzar
+              para mejorar y sé que estás haciendo lo mismo. Espero que
+              superemos todos los obstaculos, que haya confianza, que se hablen
+              las cosas y poder desearte muchos feliz cumpleaños más, tetete te
+              quiero un montónnn. <br /> Feliz cumple. 💕💕💕💕💕💕💕
+            </p>
+          </article>
+
           <section className="section-img">
-            <h1>FELIZ CUMPLEAÑOS</h1>
-            <img className="img" src="src/img/way.jpg" alt="sele y elias" />
+            <img className="img-hand" src="/way.jpg" alt="sele y elias" />
           </section>
 
           {balloons.map((balloon) => (
@@ -93,49 +139,6 @@ function App() {
               }}
             />
           ))}
-
-          <article className="article-card">
-            <h3 className="article-h3">Titulo h3</h3>
-            <p className="article-p">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-              necessitatibus fuga distinctio veritatis iure dolorem? Est rerum
-              sit nobis, ea rem et? Atque, excepturi nihil! Ipsum rem distinctio
-              obcaecati ullam. Itaque ipsum, nostrum quae aliquam, harum
-              reiciendis ex ducimus atque suscipit perferendis beatae doloribus
-              culpa aspernatur vel non ad doloremque aliquid enim illo cum. Sed
-              eveniet ratione itaque ullam recusandae. Esse similique, aliquam
-              architecto natus veniam accusantium nulla nemo voluptates ipsa?
-              Explicabo perferendis sunt optio quae cupiditate et quos quas
-              debitis consequuntur nobis suscipit, fuga doloribus deleniti
-              tenetur amet error. Est in quod, omnis fugit nulla iusto id itaque
-              voluptatum odio ad maxime sapiente autem vel rerum nemo a nobis!
-              Voluptatum temporibus illum similique facere commodi! Excepturi
-              debitis iure officiis! Quod mollitia explicabo sunt animi odio
-              reiciendis illum ipsum adipisci quas voluptate fugiat quaerat
-              similique, laudantium expedita esse libero beatae. Qui eveniet
-              quas saepe quos vitae non quam facere deserunt. Ipsa et ipsam, in
-              dolorem culpa nisi cupiditate, nemo ducimus dicta iusto voluptatum
-              repellendus, molestiae pariatur est velit minima. Quidem
-              voluptatum itaque aut accusamus sunt maiores. Praesentium incidunt
-              hic maiores. Iure, totam. Suscipit veritatis, provident, similique
-              explicabo iste consequuntur dolor unde molestiae velit laboriosam
-              sequi nesciunt expedita! Amet officiis eveniet pariatur, magnam
-              corporis praesentium inventore aut, voluptate voluptatum labore
-              tempora. Officiis at, est obcaecati molestias, quidem atque quasi
-              non vel facilis quae reprehenderit? Fugiat, cupiditate velit! Id
-              molestias rem dolores sunt repudiandae blanditiis debitis
-              cupiditate optio eius? Quaerat, consequuntur aliquam! Dolorem
-              soluta neque laborum earum perspiciatis eum optio voluptas,
-              inventore facilis dolore eos doloribus quasi alias voluptate
-              dignissimos praesentium cum ducimus aut nesciunt reiciendis? Quos
-              quisquam suscipit ad quia excepturi? Adipisci necessitatibus dicta
-              modi amet quaerat consequuntur quam veritatis non nihil, hic,
-              suscipit eligendi impedit autem cum labore illo consequatur
-              minima, ea ullam magnam. Quo mollitia quaerat nihil sequi
-              molestiae!
-            </p>
-            {/* <img src="src/img/married.jpg"></img> */}
-          </article>
         </>
       ) : (
         ""
