@@ -22,7 +22,7 @@ function useSearch() {
       return;
     }
 
-    if (search === "") {
+    if (search === " ") {
       setError("No se puede buscar una palabra vacia");
       return;
     }
@@ -47,9 +47,9 @@ function App() {
   const { search, updateSearch, error } = useSearch();    
   const { movies, loading, getMovies } = useMovies({ search, sort });
 
+  
   const debouncedGetMovies = useCallback(
     debounce((search) => {
-      console.log("search", search);
       getMovies({ search });
     }, 300),
     [getMovies]

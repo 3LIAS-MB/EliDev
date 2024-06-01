@@ -15,6 +15,7 @@ export function useMovies({ search, sort }) {
 
   // useMemo() -> Es para memorizar computaciones que hemos hecho que queremos evitar
   // que se hagan a no ser que cambien las dependencias que nosotros le indicamos
+  // useMemo toma una función (que devuelve el valor a memorizar) y un array de dependencias.
 
   // const getMovies = useMemo(() => {
   //   return async ({ search }) => {
@@ -56,7 +57,7 @@ export function useMovies({ search, sort }) {
   const sortedMovies = useMemo(() => {
     return sort
       ? // operador ternario ' : ? '
-        [...movies].sort((a, b) => // 0 (considera 'é' y 'e' como equivalentes)
+        [...movies].sort((a, b) => // 0 (considera 'a' y 'e' como equivalentes)
           a.year.localeCompare(b.year, "en", { sensivility: "base" })
         )
       : movies;
