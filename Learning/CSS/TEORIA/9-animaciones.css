@@ -2,17 +2,21 @@
 Permiten especificar cómo debe cambiar un elemento en cada etapa de la animación.*/
 
 @keyframes mover {
+
   /* Etapas de la animación */
   0% {
     /* Estilos en el inicio de la animación */
   }
+
   50% {
     /* Estilos en el punto medio de la animación */
   }
+
   100% {
     /* Estilos al final de la animación */
   }
 }
+
 .elemento {
   animation-name: mover;
   animation-duration: 3s;
@@ -29,6 +33,7 @@ y el estado final ("to") de la animación. */
   from {
     transform: rotate(0deg);
   }
+
   /* 50% {
     transform: rotate(180deg);
   } */
@@ -37,58 +42,53 @@ y el estado final ("to") de la animación. */
   }
 }
 
-/* La regla @media se utiliza para aplicar estilos específicos dependiendo
-de las características del dispositivo o preferencias del usuario */
-
-/* En este caso, se está utilizando la característica prefers-reduced-motion,
-que indica si el usuario ha solicitado reducir o eliminar las animaciones
-para evitar el mareo o la incomodidad relacionada con el movimiento. */
-@media (prefers-reduced-motion: no-preference) {
-  /* 'nth-of-type(2)' se utiliza para seleccionar elementos basados en su posición
-   dentro de un contenedor en relación con otros elementos del mismo tipo. */
-  a:nth-of-type(2) .logo {
-    /*linear" significa que la velocidad de la
-    animación será constante a lo largo del tiempo. */
-    animation: logo-spin infinite 20s linear;
-  }
+/*--------------------------------------Transformaciones-------------------------------------------*/
+/*0especifica como un número decimal o entero, que representa un factor de escala multiplicativo para las dimensiones del elemento*/
+.large {
+  transform: scale(1.5);
+  /*escala 150% de su tamaño original*/
 }
 
-/*-------------------------MEDIA QUERY------------------------------*/
-/* Se aplica cuando el ancho de la ventana del navegador es igual o menor a 600 píxeles */
-@media (max-width: 600px) {
-  /* Estilos para pantallas con un ancho máximo de 600px */
+.small {
+  transform: scale(0.75);
+  /*reduce 75% su tamaño original*/
 }
 
-/*------------------------*/
-/* Se aplica cuando el ancho de la ventana del navegador es igual o
- mayor a 768 píxeles y al mismo tiempo es igual o menor a 1024 píxeles. */
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* Estilos para pantallas con un ancho entre 768px y 1024px */
+.stretched {
+  transform: scale(1.2, 0.8);
+  /*escala no uniformemente, aumentando el
+                              ancho al 120% y reduciendo la altura al 80%.*/
 }
 
-/*------------------------*/
-/*Se aplica cuando la orientación del dispositivo es horizontal (apaisada).*/
-@media (orientation: landscape) {
-  /* Estilos para dispositivos con orientación horizontal */
+/*Se utiliza para escalar un elemento, aumentando o disminuyendo su tamaño. Es parte de las
+transformaciones CSS y puede aplicar una escala uniforme o no uniforme a un elemento.*/
+/*scale(sx, sy)*/
+.box {
+  scale: 1.1;
+  transform: scale(1.5);
+  transform-origin: top left;
+  /* Cambia el punto de origen de la transformación */
 }
 
-/*------------------------*/
-/*Se aplica cuando la orientación del dispositivo es vertical (vertical).*/
-@media (orientation: portrait) {
-  /* Estilos para dispositivos con orientación vertical */
+.xd {
+
+  /*Para rotar el contenido -> transform(transform): transformar; rotate(routeih): rotar*/
+  transform: rotate(-45deg);
+  /*Se utiliza para mover un elemento horizontal y verticalmente en relación con su posición original.*/
+  transform: translate(-50%, -50%);
 }
 
-/*------------------------*/
-/*Se aplica cuando el usuario prefiere temas oscuros en su sistema operativo o navegador. */
-@media (prefers-color-scheme: dark) {
-  /* Estilos para usuarios que prefieren temas oscuros */
-}
+/*---------------------------------PROPIEDADES TRANSICIÓN---------------------------------------------*/
+.transition {
+  /*Es una propiedad que nos ayuda a cambiar la velocidad
+  en las que ocurre las transciciones principalmente en el hover*/
 
-/*------------------------*/
-/* Se aplica cuando el usuario ha indicado que prefiere una reducción
-de movimiento, por ejemplo, debido a problemas de accesibilidad. */
-@media (prefers-reduced-motion: reduce) {
-  /* Estilos para usuarios que prefieren reducir el movimiento */
-}
+  transition: background 1s, heigth .2s, width .1s;
 
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries */
+  /*Pone todo con una transicion de 1sg
+  -> Dalto no lo recomienda*/
+  transition: all 1s;
+  transition: all 1s, border 0.5s;
+  /*Todo en 1s menos border, puede ser con cualquie otra propiedad tambien*/
+
+}

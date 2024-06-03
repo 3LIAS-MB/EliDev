@@ -1,0 +1,54 @@
+* {
+/*---------------------------------------SOMBRAS-------------------------------------------*/
+    /*Agrega sombra al texto para crear efectos visuales -> para darle más intensidad después de la coma repetimos.
+    eje x, eje y, difuminado, color*/
+    text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff;
+    /*eje x, eje y, tamaño del desenfoque, cuando borde va a tener (generalmente 0) y el color*/
+    box-shadow: 2px 4px 15px 0 #000;
+
+    /* Este valor se utiliza para crear una sombra interna en lugar de una sombra externa.
+    La sombra se renderiza dentro del borde del elemento en lugar de fuera de él. */
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, .4);
+    /* Este valor se utiliza para eliminar cualquier sombra aplicada
+    al elemento. Es útil si deseas anular una sombra anteriormente definida. */
+    box-shadow: none -10px -10px 0 rgba(0, 0, 0, .4);
+    /* Este valor restablece la propiedad box-shadow a su valor inicial, que es
+    generalmente none, aunque puede variar según el navegador y la hoja de estilos. */
+    box-shadow: initial -10px -10px 0 rgba(0, 0, 0, .4);
+    /* Este valor restablece la propiedad box-shadow a su valor inicial o heredado, lo que sea aplicable en el contexto. Si la propiedad no tiene un valor inicial o heredado, se comportará como inherit. */
+    box-shadow: unset -10px -10px 0 rgba(0, 0, 0, .4);
+    /***************************************/
+    filter: drop-shadow(0 0 2em #61dafbaa);
+    /*Aplica un desenfoque al elemento. Puedes especificar
+    el valor en píxeles para el radio de desenfoque.*/
+    filter: blur(5px);
+    /* Ajusta el brillo del elemento. Puedes especificar un
+    valor numérico, donde 1 es el brillo normal, valores
+    inferiores a 1 lo oscurecen y valores superiores a 1 lo iluminan. */
+    filter: brightness(0.5);
+    /*Ajusta el contraste del elemento. Puedes especificar un valor numérico,
+    donde 1 es el contraste normal, valores inferiores a 1 lo reducen y
+    valores superiores a 1 lo aumentan.*/
+    filter: contrast(150%);
+    /* Convierte el elemento en una imagen en escala de grises.
+    Puedes especificar un valor numérico entre 0 y 1, donde 0
+    es ninguna escala de grises y 1 es escala de grises completa. */
+    filter: grayscale(0.5);
+    /* Rota los colores del elemento. Puedes especificar
+    un ángulo en grados para rotar los colores. */
+    filter: hue-rotate(90deg);
+    /*Invierte los colores del elemento. Puedes especificar un
+    valor numérico entre 0 y 1, donde 0 es ningún color invertido
+    y 1 es todos los colores invertidos.*/
+    filter: invert(0.5);
+    /* Ajusta la opacidad del elemento. Puedes especificar un valor numérico 
+    entre 0 (completamente transparente) y 1 (completamente opaco). */
+    filter: opacity(0.7);
+    /* Ajusta la saturación del elemento. Puedes especificar un valor numérico,
+    donde 1 es la saturación normal, valores inferiores a 1 lo desaturan y
+    valores superiores a 1 lo saturan más. */
+    filter: saturate(200%);
+    /* Convierte el elemento en una imagen con tonos sepia. Puedes especificar un valor 
+    numérico entre 0 y 1, donde 0 es ningún tono sepia y 1 es tonos sepia completos. */
+    filter: sepia(0.3);
+}

@@ -9,6 +9,61 @@
     .nav__responsive-ul {
         display: block;
     }
+    /*<meta name="viewport" content="width=device-width, initial-scale=1.0">*/
 }
 
-/*<meta name="viewport" content="width=device-width, initial-scale=1.0">*/
+/* La regla @media se utiliza para aplicar estilos específicos dependiendo
+de las características del dispositivo o preferencias del usuario */
+
+/* En este caso, se está utilizando la característica prefers-reduced-motion,
+que indica si el usuario ha solicitado reducir o eliminar las animaciones
+para evitar el mareo o la incomodidad relacionada con el movimiento. */
+@media (prefers-reduced-motion: no-preference) {
+    /* 'nth-of-type(2)' se utiliza para seleccionar elementos basados en su posición
+     dentro de un contenedor en relación con otros elementos del mismo tipo. */
+    a:nth-of-type(2) .logo {
+      /*linear" significa que la velocidad de la
+      animación será constante a lo largo del tiempo. */
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  /*-------------------------MEDIA QUERY------------------------------*/
+  /* Se aplica cuando el ancho de la ventana del navegador es igual o menor a 600 píxeles */
+  @media (max-width: 600px) {
+    /* Estilos para pantallas con un ancho máximo de 600px */
+  }
+  
+  /*------------------------*/
+  /* Se aplica cuando el ancho de la ventana del navegador es igual o
+   mayor a 768 píxeles y al mismo tiempo es igual o menor a 1024 píxeles. */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos para pantallas con un ancho entre 768px y 1024px */
+  }
+  
+  /*------------------------*/
+  /*Se aplica cuando la orientación del dispositivo es horizontal (apaisada).*/
+  @media (orientation: landscape) {
+    /* Estilos para dispositivos con orientación horizontal */
+  }
+  
+  /*------------------------*/
+  /*Se aplica cuando la orientación del dispositivo es vertical (vertical).*/
+  @media (orientation: portrait) {
+    /* Estilos para dispositivos con orientación vertical */
+  }
+  
+  /*------------------------*/
+  /*Se aplica cuando el usuario prefiere temas oscuros en su sistema operativo o navegador. */
+  @media (prefers-color-scheme: dark) {
+    /* Estilos para usuarios que prefieren temas oscuros */
+  }
+  
+  /*------------------------*/
+  /* Se aplica cuando el usuario ha indicado que prefiere una reducción
+  de movimiento, por ejemplo, debido a problemas de accesibilidad. */
+  @media (prefers-reduced-motion: reduce) {
+    /* Estilos para usuarios que prefieren reducir el movimiento */
+  }
+  
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries */

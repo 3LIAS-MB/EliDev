@@ -1,128 +1,38 @@
 * {
-/*---------------------------------------SOMBRAS-------------------------------------------*/
-/*Agrega sombra al texto para crear efectos visuales -> para darle más intensidad después de la coma repetimos.
- eje x, eje y, difuminado, color*/
-text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff;
-/*eje x, eje y, tamaño del desenfoque, cuando borde va a tener (generalmente 0) y el color*/
-box-shadow: 2px 4px 15px 0 #000;
+  /*-------------------------------------------FLOAT-----------------------------------------*/
+  /*La propiedad CSS float se utiliza para controlar la alineación horizontal de elementos dentro de un contenedor. Es comúnmente utilizada para crear diseños de columnas o para colocar elementos uno al lado del otro. float tiene dos valores principales: left y right.*/
 
-/* Este valor se utiliza para crear una sombra interna en lugar de una sombra externa.
- La sombra se renderiza dentro del borde del elemento en lugar de fuera de él. */
-box-shadow: inset -10px -10px 0 rgba(0, 0, 0, .4);
-/* Este valor se utiliza para eliminar cualquier sombra aplicada
-al elemento. Es útil si deseas anular una sombra anteriormente definida. */
-box-shadow: none -10px -10px 0 rgba(0, 0, 0, .4);
-/* Este valor restablece la propiedad box-shadow a su valor inicial, que es
- generalmente none, aunque puede variar según el navegador y la hoja de estilos. */
-box-shadow: initial -10px -10px 0 rgba(0, 0, 0, .4);
-/* Este valor restablece la propiedad box-shadow a su valor inicial o heredado, lo que sea aplicable en el contexto. Si la propiedad no tiene un valor inicial o heredado, se comportará como inherit. */
-box-shadow: unset -10px -10px 0 rgba(0, 0, 0, .4);
-/***************************************/
-filter: drop-shadow(0 0 2em #61dafbaa);
-/*Aplica un desenfoque al elemento. Puedes especificar
- el valor en píxeles para el radio de desenfoque.*/
-filter: blur(5px);
-/* Ajusta el brillo del elemento. Puedes especificar un
-valor numérico, donde 1 es el brillo normal, valores
-inferiores a 1 lo oscurecen y valores superiores a 1 lo iluminan. */
-filter: brightness(0.5);
-/*Ajusta el contraste del elemento. Puedes especificar un valor numérico,
-donde 1 es el contraste normal, valores inferiores a 1 lo reducen y
-valores superiores a 1 lo aumentan.*/
-filter: contrast(150%);
-/* Convierte el elemento en una imagen en escala de grises.
-Puedes especificar un valor numérico entre 0 y 1, donde 0
-es ninguna escala de grises y 1 es escala de grises completa. */
-filter: grayscale(0.5);
-/* Rota los colores del elemento. Puedes especificar
- un ángulo en grados para rotar los colores. */
-filter: hue-rotate(90deg);
-/*Invierte los colores del elemento. Puedes especificar un
-valor numérico entre 0 y 1, donde 0 es ningún color invertido
- y 1 es todos los colores invertidos.*/
-filter: invert(0.5);
-/* Ajusta la opacidad del elemento. Puedes especificar un valor numérico 
-entre 0 (completamente transparente) y 1 (completamente opaco). */
-filter: opacity(0.7);
-/* Ajusta la saturación del elemento. Puedes especificar un valor numérico,
- donde 1 es la saturación normal, valores inferiores a 1 lo desaturan y
- valores superiores a 1 lo saturan más. */
-filter: saturate(200%);
-/* Convierte el elemento en una imagen con tonos sepia. Puedes especificar un valor 
-numérico entre 0 y 1, donde 0 es ningún tono sepia y 1 es tonos sepia completos. */
-filter: sepia(0.3);
-
-/*--------------------------------------Transformaciones-------------------------------------------*/
-/*Para rotar el contenido -> transform(transform): transformar; rotate(routeih): rotar*/ 
-transform: rotate(-45deg);
-/*Se utiliza para mover un elemento horizontal y verticalmente en relación con su posición original.*/
-transform: translate(-50%,-50%);
-
-/*----------------------------------------OVERFLOW----------------------------------------------*/
-/* La propiedad CSS overflow controla cómo se maneja el contenido que desborda el área
-de un elemento con un tamaño fijo. Es útil cuando tienes contenido que es más grande
-que el contenedor que lo contiene. */
-
-/*El contenido que desborda el contenedor se
-muestra fuera del contenedor (predeterminado).*/
-overflow: visible; 
-/*En caso de que el contenido sobrepaso la caja, nos da la
- posibilidad de que podas scrolear dentro de ella*/
-overflow: auto; 
-/*Obligatoriamente pone la barra de scroll
-(no como auto, que solo te muestra si es necesario)*/
-overflow: scroll; 
-/*Cualquier contenido que se desborde del contenedor será ocultado, es decir,
-no será visible para el usuario. El contenido que exceda los límites del contenedor
-será recortado y no se mostrará en la pantalla.(lo uso con flex-shrink: 0)*/
-overflow: hidden; 
-
-/*Overflow es un shorthand*/
-overflow-y: visible;
-overflow-x: visible;
-
-/*---------------------------------PROPIEDADES TRANSICIÓN---------------------------------------------*/
-/*Es una propiedad que nos ayuda a cambiar la velocidad
-en las que ocurre las transciciones principalmente en el hover*/
-
-transition: background 1s, heigth .2s, width .1s; 
-
-/*Pone todo con una transicion de 1sg
--> Dalto no lo recomienda*/
-transition: all 1s;
-transition: all 1s, border 0.5s; /*Todo en 1s menos border, puede ser con cualquie otra propiedad tambien*/
-
-
-/*-------------------------------------------FLOAT-----------------------------------------*/
-/*La propiedad CSS float se utiliza para controlar la alineación horizontal de elementos dentro de un contenedor. Es comúnmente utilizada para crear diseños de columnas o para colocar elementos uno al lado del otro. float tiene dos valores principales: left y right.*/
-
-/*float: left;
+  /*float: left;
 float: right;
 
 float: none;
 float: inherit;*/
 
-/*-----------------------------------------------------------------------------------------*/
-.caja {
+  /*-----------------------------------------------------------------------------------------*/
+  .caja {
     background-color: rgb(0, 0, 0); /*RGB -> RED, GREEN, BLUE*/
-    background: rgba(150,150,150,0.5); /*RED, GREE, BLUE, ALPHA -> 4to parametro opacidad de 0 a 1
+    background: rgba(
+      150,
+      150,
+      150,
+      0.5
+    ); /*RED, GREE, BLUE, ALPHA -> 4to parametro opacidad de 0 a 1
     background: #fff; /*EL CUARTO PARAMETRO ES LA OPACIDAD*/
-}
+  }
 
-/*------------------------------------------SIN CATEGORIA----------------------------------------------------*/
-.sin-categoria {
+  /*----------------------------------SIN CATEGORIA----------------------------------------------*/
+  .sin-categoria {
     /*PARA QUITARLE AL TEXTAREA LA OPCION DE EXPANDIRSE*/
     resize: none;
     /*Quita los estilos de los ol y ul*/
-    list-style: none; 
+    list-style: none;
     list-style-type: disc;
     /*Lo uso para alinear en el centro a la imagen*/
-    vertical-align: middle; 
+    vertical-align: middle;
 
     /* La propiedad user-select en CSS controla si un usuario puede seleccionar o no el contenido de un elemento utilizando el ratón o el teclado. Cuando se establece en none, impide que el usuario seleccione el contenido del elemento. */
     -webkit-user-select: antialiased;
-    user-select: none;
-    
+
     /*auto: Este es el valor predeterminado. Permite que el navegador determine si el
     contenido del elemento puede ser seleccionado por el usuario.
 
@@ -138,26 +48,27 @@ float: inherit;*/
     inherit: Hereda el valor de user-select del elemento padre.
 
     element: Este valor es más específico y se usa para indicar que solo se puede seleccionar el contenido del elemento en sí, pero no su texto descendiente. Esto puede ser útil en casos donde deseas permitir la selección de elementos como botones, pero no su contenido interno.*/
+    user-select: none;
 
     /*-----------------------*/
     /* La propiedad white-space controla cómo se maneja el espaciado en blanco y los saltos de línea dentro del contenedor. Puedes establecer white-space: nowrap; para evitar que el texto se desborde y se ajuste en una sola línea sin saltos de línea. */
-}
-    
-/*------------------------POPIEDADES DE VISUALIZACIÓN---------------------------------------*/
-.class { 
+
+    /*-----------------------*/
+
+  }
+  /*------------------------POPIEDADES DE VISUALIZACIÓN---------------------------------------*/
+  .class {
     /*Desde el intervalo [0, 1]
     Donde 1 es totalmente opaco*/
-    opacity: 0; 
+    opacity: 0;
     opacity: 0.5; /*La mitad*/
-}
-
+  }
 }
 
 /*=====================================TEORIA======================================================*/
 /*"selección múltiple" o "selección de clase múltiple*/
-.caja1, .caja2 {
-    width: 200px ;
-    height: 200px;
-  }
-
-  
+.caja1,
+.caja2 {
+  width: 200px;
+  height: 200px;
+}

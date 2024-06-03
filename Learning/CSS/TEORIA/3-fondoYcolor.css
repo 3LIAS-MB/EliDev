@@ -1,5 +1,5 @@
 * {
-    /*---------------------------------PROPIEDADES DE FONDO Y COLOR---------------------------------------------*/
+/*------------------------------PROPIEDADES DE FONDO Y COLOR-----------------------------------*/
 /*background-color: purple; /*Fondo de color purpura*/
 background: purple; /*Fondo de color purpura*/
 background-color: purple;
@@ -48,5 +48,36 @@ background-position-x: right; /*Coloca el elemento a la derecha del eje-x*/
 background-position-y: left; /**/
 
 
+/*----------------------------------------OVERFLOW----------------------------------------------*/
+/* La propiedad CSS overflow controla cómo se maneja el contenido que desborda el área
+de un elemento con un tamaño fijo. Es útil cuando tienes contenido que es más grande
+que el contenedor que lo contiene. */
 
+/*El contenido que desborda el contenedor se
+muestra fuera del contenedor (predeterminado).*/
+overflow: visible; 
+/*En caso de que el contenido sobrepaso la caja, nos da la
+ posibilidad de que podas scrolear dentro de ella*/
+overflow: auto; 
+/*Obligatoriamente pone la barra de scroll
+(no como auto, que solo te muestra si es necesario)*/
+overflow: scroll; 
+/*Cualquier contenido que se desborde del contenedor será ocultado, es decir,
+no será visible para el usuario. El contenido que exceda los límites del contenedor
+será recortado y no se mostrará en la pantalla.(lo uso con flex-shrink: 0)*/
+overflow: hidden; 
+
+/*Overflow es un shorthand*/
+overflow-y: visible;
+overflow-x: visible;
+
+
+/* La propiedad aspect-ratio en CSS se utiliza para definir la relación de aspecto de un elemento, lo que es especialmente útil en diseño responsivo para mantener proporciones consistentes. Aquí te explico en detalle cómo funciona, su sintaxis, ejemplos prácticos y cómo se clasifica en CSS. */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1; /*cuadrado*/
+    aspect-ratio: 4 / 3; /*pantallas antiguas*/
+
+  }
 }
