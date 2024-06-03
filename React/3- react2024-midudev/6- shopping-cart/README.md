@@ -13,3 +13,8 @@ Carrito:
 - Haz que se puedan modificar la cantidad de productos del carrito.
 - Sincroniza los cambios del carrito con la lista de productos.
 - Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
+
+
+->
+- prop drilling: es como un taladro, es como hacer un agujero donde estamos pasando
+hacia abajo unas props para que pueda funcionar algo, informacion, actualizacion, metodos, etc
