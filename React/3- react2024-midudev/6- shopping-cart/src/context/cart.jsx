@@ -1,55 +1,36 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
+import { cartReducer, cartInitialState } from "../reducer/cart";
 
 // 1. Crear contexto
 export const CartContext = createContext();
 
-const initialState = []
-const reducer = (state, action) => {
-  switch(action.type) {
-    case 'ADD_TO_CARD'
-  }
+function useCartReducer() {
+  // la función 'dispatch' es la encargada de neviar las acciones a reducer
+  const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+
+  const addToCart = (product) =>
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: product,
+    });
+
+  const removeFromCart = (product) =>
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: product,
+    });
+
+  const clearCart = () => dispatch({ type: "CLEAN_CART" });
+  return { state, addToCart, removeFromCart, clearCart };
 }
 
-// 2. Crear Provider
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    //setCart([... cart, product])
-
-    // Check if the product is already in the cart
-    const productInCartIndex = cart.findIndex((item) => item.id === product.id);
-    if (productInCartIndex >= 0) {
-      // una forma seria utilizando 'structuredClone'
-      // para hacer una copia PROFUNDA del array
-      const newCart = structuredClone(cart);
-      newCart[productInCartIndex].quantity += 1;
-      return setCart(newCart);
-    }
-
-    // If producto don't is on the cart
-    setCart((prevState) => [
-      // operador de propagación (spread operator).
-      ...prevState,
-      {
-        ...product,
-        quantity: 1,
-      },
-    ]);
-  };
-
-  const removeFromCart = (product) => { // rest condition
-    setCart((prevState) => prevState.filter((item) => item.id !== product.id));
-  };
-
-  const clearCart = () => {
-    setCart([]);
-  };
+  const { state, addToCart, removeFromCart, clearCart } = useCartReducer()
 
   return (
     <CartContext.Provider
       value={{
-        cart,
+        cart: state,
         addToCart,
         removeFromCart,
         clearCart,
