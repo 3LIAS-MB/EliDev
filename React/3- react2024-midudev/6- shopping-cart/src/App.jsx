@@ -10,6 +10,7 @@ import { CartProvider } from "./context/cart.jsx";
 function App() {
   const { filterProducts } = useFilters();
   const filteredProducts = filterProducts(initalProducts);
+  console.log(filteredProducts)
 
   return (
     <CartProvider>
@@ -18,7 +19,7 @@ function App() {
       <Products products={filteredProducts} />
       {IS_DEVELOPMENT && <Footer />}
     </CartProvider> 
-  );
+  );  
 }
 
 export default App;

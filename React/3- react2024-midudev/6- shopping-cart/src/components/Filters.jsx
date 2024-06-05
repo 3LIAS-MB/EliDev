@@ -1,8 +1,9 @@
-import { useState, useId } from "react";
+import { useId } from "react";
 import "./Filters.css";
 import { useFilters } from "../hooks/useFilters";
 
 export function Filters() {
+  // trae los productos filtrados
   const { filters, setFilters } = useFilters()
   // Esto no sirve para utilizarlo como 'index' (key)
   // en algo que se está iterando, porque se podria estar

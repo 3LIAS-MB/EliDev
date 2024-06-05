@@ -12,7 +12,7 @@ export function useFilters() {
         );
       });
     };
-  
+    
     return { filters, filterProducts, setFilters };
   }
-  
+
