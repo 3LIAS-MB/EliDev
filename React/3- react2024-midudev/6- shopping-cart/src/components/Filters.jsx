@@ -2,31 +2,38 @@ import { useId } from "react";
 import "./Filters.css";
 import { useFilters } from "../hooks/useFilters";
 
+// import { useContext } from "react";
+// import { FiltersContext } from "../context/filters";
+
 export function Filters() {
+  // const { filters, setFilters } = useContext(FiltersContext)
+
   // trae los productos filtrados
-  const { filters, setFilters } = useFilters()
+  const { filters, setFilters } = useFilters();
+  console.log(filters);
+
   // Esto no sirve para utilizarlo como 'index' (key)
   // en algo que se está iterando, porque se podria estar
   // creando un nuevo ID o puede se malenteder (explayar)
 
-  // Esto no seria la ID de un elemento, sino del 
+  // Esto no seria la ID de un elemento, sino del
   // orden de llamada dentro del componente
   // Es perfecto para este tipo de ID, es lo ideal.
-  const minPriceFilterId = useId()
-  const categoryFilterId = useId()
+  const minPriceFilterId = useId();
+  const categoryFilterId = useId();
 
   const handleChangeMinPrice = (event) => {
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
-      minPrice: event.target.value
-    }))
+      minPrice: event.target.value,
+    }));
   };
 
   const handleChangeCategory = (event) => {
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
-      categoty: event.target.value
-    }))
+      category: event.target.value,
+    }));
   };
 
   return (
@@ -35,7 +42,7 @@ export function Filters() {
         <label htmlFor={minPriceFilterId}>Precio a partir de: </label>
         <input
           type="range"
-          id= {minPriceFilterId}
+          id={minPriceFilterId}
           min="0"
           max="1000"
           onChange={handleChangeMinPrice}

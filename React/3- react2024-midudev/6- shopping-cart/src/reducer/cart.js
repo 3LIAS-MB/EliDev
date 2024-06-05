@@ -6,7 +6,8 @@
 
 // update localStorage with state for cat
 export const updateLocalStorage = (state) => {
-  window.localStorage.setItem("cart", JSON.stringify(state));
+  // lo transforma en String y luego lo almacena bajo la clave 'cart'
+  window.localStorage.setItem("cart", JSON.stringify(state)); 
 };
 
 // useRedecer -> es un hook que nos permite manejar el estado de una manera escalable
@@ -19,14 +20,19 @@ export const updateLocalStorage = (state) => {
 
 // PERSISTENCIA
 export const cartInitialState =
+// Si no hay nada devuelve null o cualquier valor falsy
   JSON.parse(window.localStorage.getItem("cart")) || [];
 
 export const cartReducer = (state, action) => {
+  // console.log(state)
+  // console.log(action.payload)
+  // console.log(action.type)
+  
   // En el 'type' le pasamos el string para identificar la accion que
-  // tenemos que hacer, y  en el 'payload' le pasamos todo el objeto
+  // tenemos que hacer, y en el 'payload' le pasamos todo el objeto
   // que necesitamos para actualizar el estado (hay veces q es opcional)
   const { type: actionType, payload: actionPayload } = action;
-  //      acción            object need
+  //      acción            producto que queremos añadir
 
   switch (actionType) {
     case "ADD_TO_CART": {
@@ -53,7 +59,9 @@ export const cartReducer = (state, action) => {
 
         // ⚡ usando el spread operator y slice
         const newState = [
-          ...state.slice(0, productInCartIndex),
+          // para copiar todos los elementos desde el inicio del  
+          // array state hasta justo antes de productInCartIndex.
+        ...state.slice(0, productInCartIndex),
           {
             ...state[productInCartIndex],
             quantity: state[productInCartIndex].quantity + 1,
@@ -80,7 +88,7 @@ export const cartReducer = (state, action) => {
 
     case "REMOVE_FROM_CART": {
       const { id } = actionPayload;
-      const newState = state.filter((item) => item.id !== id);
+      const newState = state.filter(item => item.id !== id)
       updateLocalStorage(newState);
       return newState;
     }

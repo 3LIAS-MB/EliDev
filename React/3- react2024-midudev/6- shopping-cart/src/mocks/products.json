@@ -13,6 +13,7 @@
       "id": 78,
       "title": "Apple MacBook Pro 14 Inch Space Grey",
       "price": 1999.99,
+      "category": "laptos",
       "quantity": 2,
       "total": 3999.98,
       "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"

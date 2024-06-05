@@ -18,9 +18,9 @@ export const CartContext = createContext();
 // de actualización está dentro y por lo tanto cuesta más. Es intesante usar
 // 'useReducer' cuando se tiene muchos useState, es decir, estados fragmentados
 // la función 'dispatch envio/despacho' es la encargada de neviar las acciones a reducer
-function useCartReducer() {
+function useCartReducer() { 
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
-
+  console.log(state)
   // Funciones de acción para el carrito de compras
   const addToCart = (product) =>
     dispatch({
