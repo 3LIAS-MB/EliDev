@@ -2,7 +2,7 @@
 
 - [x] Instalar el linter
 
-- [x] Crear una forma de hacer MPAs (Multiple Page Application)
+- [x] Crear una forma de hacer MPA (Multiple Page Application)
 Una aplicación de múltiples páginas (MPA) es una arquitectura web tradicional donde cada cambio de vista o de página implica la carga completa de una nueva página desde el servidor. Cada página tiene su propio contenido HTML, CSS y JavaScript, y se recarga completamente cada vez que el usuario navega a una nueva página.
 
 -> Características:
@@ -59,8 +59,8 @@ compleja y requiere herramientas y patrones específicos
 (como Redux o Context API en React).
 
 - [x] Poder navegar entre páginas con el botón de atrás
-- [] Crear componente Link para hacerlo declarativo
-- [] Crear componente Router para hacerlo más declarativo
+- [x] Crear componente Link para hacerlo declarativo
+- [x] Crear componente Router para hacerlo más declarativo
 - [] Soportar ruta por defecto (404)
 - [] Soportar rutas con parámetros
 - [] Componente para hacerlo declarativo
