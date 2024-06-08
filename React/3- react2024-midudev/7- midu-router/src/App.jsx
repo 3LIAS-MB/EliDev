@@ -12,7 +12,7 @@ const appRoutes = [
     Component: HomePage,
   },
   {
-    path: "/about",
+    path: "/about", 
     Component: AboutPage,
   },
   {
@@ -24,7 +24,7 @@ const appRoutes = [
     path: '/search/:query',
     Component: SearchPage
   }
-]
+] 
 
 function App() {
   return (
