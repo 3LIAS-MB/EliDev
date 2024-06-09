@@ -18,11 +18,7 @@ const useI18n = (lang) => {
   }
   
 export default function AboutPage({ routeParams }) { // {lang: 'en'}
-  console.log('0asd')
-  console.log(routeParams)
   const i18n = useI18n(routeParams.lang ?? 'es')
-  console.log(routeParams.lang)
-
 
   return (
     <>

@@ -63,21 +63,26 @@ export function Router ({ children, routes = [], defaultComponent: DefaultCompon
     // -> nos devuelve otra función que nos va a permitir compararlo con el 'currentPath'
     const matcherUrl = match(path, { decode: decodeURIComponent })
     // matcheUrl se llama con currentPath para verificar si hay una coincidencia dinámica.
-    // matched será un objeto con detalles de la coincidencia si hay una, o false si no hay coincidencia.}
-    const matched = matcherUrl(currentPath)
-    if (!matched) return false
+    // matched será un objeto con detalles de la coincidencia si hay una, o false si no hay coincidencia.
 
+    //console.log(path) // -> '/:lang/about
+    //console.log(currentPath) // -> '/en/about'
+    const matched = matcherUrl(currentPath)
+    //console.log(matched)  // -> {path: '/en/about', index: 0, params: { lang: 'en'}}
+    if (!matched) return false
+    
 
     // guardar los parámetros de la url que eran dinámicos
     // y que hemos extraído con path-to-regexp,
     // por ejemplo, si la ruta es /search/:query
     // y la url es search/javascript
     // -> matched.params.query === 'javascript'
-    routeParams = matched.params
+    routeParams = matched.params 
+    // console.log(routeParams) // -> { lang: 'en' }
     return true;
   })?.Component; // -> encadenamiento opcional (optional chaining)
 
-  return Page
-    ? <Page routeParams={routeParams} />
-    : <DefaultComponent routeParams={routeParams} />
+    return Page // -> Devuelve un componente
+      ? <Page routeParams={routeParams} />
+      : <DefaultComponent routeParams={routeParams} />
 }
