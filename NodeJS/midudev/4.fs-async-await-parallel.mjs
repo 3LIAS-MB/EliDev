@@ -1,3 +1,5 @@
+// Sincrono paralelo
+
 import { readFile } from "node:fs/promises";
 // Lo bueno es que esto va a ser más rapido
 
