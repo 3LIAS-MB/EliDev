@@ -1,10 +1,10 @@
 // Es un objeto global que tiene propiedades y metodos que 
 // permiten interactuar con el entorno de ejecucion de nodejs 
 // y nos da informacion q esta relacionada con el proceso actual
-console.log(process)
+// console.log(process)
 
 // argumentos de entrada
-// console.log(process.argv)
+console.log(process.argv)
 
 // controlar el proceso y su salida
 // process.exit(1)
@@ -15,7 +15,7 @@ console.log(process)
 // })
 
 // current working directory
-console.log(process.cwd())
+// console.log(process.cwd())
 
 // platform
-console.log(process.env.PEPITO)
+// console.log(process.env.PEPITO)
