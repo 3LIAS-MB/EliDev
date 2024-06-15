@@ -1,0 +1,17 @@
+<!--ESTA PLANTILLA SE SIRVE DESDE EXPRESS USANDO .ejs-->
+
+<!--esta es la forma de importar en ejs-->
+
+<%- include('partials/header') -%>
+
+    <h1><%= title %></h1>
+    
+    <% if (isActive) { %>
+        <p>El servidor está activo</p>
+    <% } else { %>
+        <p>El servidor está inactivo </p>
+    <% } %>
+    
+    <%= new Date() %>
+    
+<%- include('partials/footer') -%>

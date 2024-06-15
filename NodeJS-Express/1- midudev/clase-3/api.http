@@ -1,0 +1,36 @@
+### RECUPERAR TODAS LAS PELICULAS
+GET http://localhost:1234/movies
+
+### RECUPERAR UNA PELICULA POR ID
+GET http://localhost:1234/movies/04986507-b3ed-442c-8ae7-4c5df804f896
+
+### RECUPERAR TODAS LAS PELICULAS POR UN GENERO
+GET http://localhost:1234/movies?genre=Adventure
+
+### CREAR UNA PELICULA CON POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+### Actualizar una pelicula con PATCH -> (solo una parte de ella)
+PATCH http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+Content-Type: application/json
+
+{
+  // no tiene permiso para cambiar el ID,
+  // porque no se está validando
+  "id": "123",
+  "year": 1993
+}

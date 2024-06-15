@@ -1,0 +1,12 @@
+npm -> node package manageable
+
+administrador de paquetes de node, salió poco despues de node y es el registro de paquetes más
+grande de codigo que existe. no hay ningun tipo de sistema de ningun lenguaje de prog ni entorno
+más grande que nodejs, tiene millones de paquetes
+
+-> nmp
+1. Registro de paquetes/dependencias de codigo abierto que cualquiera puede utilizar, ej, react
+
+2. Tambien es una linea de comando que es la utilidad que utilizamos en la terminal para
+ instalar o manejar nuestras dependencias. Se pueden usar alternativas 'npm', 'yarn',
+ 'pnpm' y poder seguir usando el registro de npm
