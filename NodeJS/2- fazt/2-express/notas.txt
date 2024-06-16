@@ -1,4 +1,0 @@
-EXPRESS es un framework 'unopinionated' esto quiere decir uqe no nos dice como
-tenemos que crear la estructura de nuestro proyecto ni como escribir codigo, 
-solo nos funcionalidades de ya hechas y nosotros tenemos q escribir la estructura y decidir
-como utilizar estas funcionalidades, lo hace versatil y ligero al no utilizar codigo inncesario
