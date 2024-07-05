@@ -2,6 +2,7 @@ const express = require('express')
 // biblioteca nativa de nodejs, funca en el navegador
 // -> crypto nos permite crear crear IDS unicas
 const crypto = require('node:crypto')
+// middleware cors -> esto po
 const cors = require('cors')
 const movies = require('./movies.json')
 const { validateMovie, validatePartialMovie } = require('./schemas/movies')
@@ -15,7 +16,8 @@ app.use(
         'http://localhost:8080',
         'http://localhost:1234',
         'https://movies.com',
-        'https://midu.dev'
+        'https://midu.dev',
+        'http://localhost:58801'
       ]
 
       if (ACCEPTED_ORIGINS.includes(origin)) {
@@ -44,7 +46,7 @@ app.get('/movies', (req, res) => {
   // // El navegador no envia el header de 'origin'
   // // cuando la peticion es del mismo origin
   // const origin = req.header('origin')
-  // if (ACCEPTED_ORIGINS.includes(origin) || origin) {
+  // if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
   //   /* '*' -> todos los origines q no sean los mios están permitidos */
   //   res.header('Access-Control-Allow-Origin', origin) // -> 'http://localhost:8080'
   // }
@@ -130,10 +132,10 @@ app.patch('/movies/:id', (req, res) => {
 // -> PARA TODO ESTO YA EXISTEN DEPENCIAS COMO 'CORS'
 
 // métodos normales: GET/HEAD/POST
+// métodos complejos: PUT/PATCH/DELETE.
 
-// métodos complejos: PUT/PATCH/DELETE. En estos existe el 'CORS PRE-Fligh' que requieren
-//  una peticion especial que se llama 'OPTIONS'. Es como una petición previa
-
+// En estos existe el 'CORS PRE-Fligh' que requieren una peticion
+// especial que se llama 'OPTIONS'. Es como una petición previa
 // app.options('/movies/:id', (req, res) => {
 //   // -> Lo reemplaza la dependencia
 //   const origin = req.header('origin')
@@ -146,6 +148,8 @@ app.patch('/movies/:id', (req, res) => {
 //   res.send(200)
 // })
 
+// El hosting asigna el puerto automaticamente por variable de entorno.
+// Es por eso que es importante agregar 'process.env.PORT'
 const PORT = process.env.PORT ?? 1234
 
 app.listen(PORT, () => {

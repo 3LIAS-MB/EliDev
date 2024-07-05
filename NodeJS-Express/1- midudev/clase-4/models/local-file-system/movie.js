@@ -17,7 +17,9 @@ const movies = readJSON('./movies.json')
 export class MovieModel {
   // Es interesante que sea de la clase
   // porque asi tienen un contrato
-  static async getAll ({ genre }) { // -> static getAll = async ({ genre }) => {
+
+  // -> static getAll = async ({ genre }) => { -> forma valida también
+  static async getAll ({ genre }) {
     if (genre) {
       return movies.filter((movie) =>
         movie.genre.some((g) => g.toLowerCase() === genre.toLowerCase())

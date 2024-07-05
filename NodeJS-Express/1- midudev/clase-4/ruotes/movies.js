@@ -4,6 +4,7 @@ import { Router } from 'express'
 
 import { MovieController } from '../controllers/movies.js'
 
+// Export nombrado
 export const moviesRouter = Router()
 
 moviesRouter.get('/', MovieController.getAll)

@@ -26,6 +26,8 @@ function validateMovie (input) {
 }
 
 function validatePartialMovie (input) {
+  // 'partial' convierte a todas las propiedades
+  // opcionales y sino esta simplemente las ignora
   return movieSchema.partial().safeParse(input)
 }
 
