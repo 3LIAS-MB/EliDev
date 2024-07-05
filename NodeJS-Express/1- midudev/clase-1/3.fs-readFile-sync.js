@@ -15,6 +15,5 @@ console.log('segundo texto:', secondText)
 // Tambien se puede escribir en el archivo
 const title = 'asdasdasdasd'
 fs.writeFileSync('./archivo.txt', title, {
-    
     flag: 'a'
 })

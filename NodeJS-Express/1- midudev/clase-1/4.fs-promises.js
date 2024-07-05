@@ -12,7 +12,7 @@
 //     console.log('primer texto:', text)
 //   })
 
-const fs = require('node:fs')
+const fs = require('node:fs/promises')
 
 console.log('Leyendo el primer archivo...')
 fs.readFile('./archivo.txt', 'utf-8')

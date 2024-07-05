@@ -1,6 +1,6 @@
 // sincrono sencuencial
 
-// En CMJ no tiene acceso a esta forma de utilizar el async-await
+// En CMJs no tiene acceso a esta forma de utilizar el async-await
 // ->  const text = await readFile('./archivo.txt', 'utf-8')
 // Una manera vieja de hacerlo podría ser de esta forma: "
 const { readFile } = require('node:fs/promises');

@@ -6,16 +6,27 @@ const fs = require('node:fs/promises')
 const path = require('node:path')
 const pc = require('picocolors')
 
-// 'Nullish Coalescing Operator' -> operador lógico que devuelve
-// su operando del lado derecho cuando su operando del lado izquierdo
-// es null o undefined. Si el operando del lado izquierdo no es
-// null ni undefined, devuelve ese operando.
+// 'Nullish Coalescing Operator (operador de coalición nula)' -> operador lógico
+// que devuelve su operando del lado derecho cuando su operando del lado izquierdo
+// es null o undefined. Si el operando del lado izquierdo no es null ni undefined,
+// devuelve ese operando.
 
-// 'rocess.argv' es una matriz que contiene
-// los argumentos de la línea de comandos.
+// process.argv es una matriz que contiene los argumentos pasados en 
+// la línea de comandos cuando se ejecuta el script de Node.js.
+
+// -> El primer elemento, process.argv[0], es la ruta de ejecución del binario de Node.js.
+// C:\Program Files\nodejs\node.exe
+
+// -> El segundo elemento, process.argv[1], es la ruta del archivo del script que se está ejecutando.
+// /path/to/your/script.js
+
+// -> El tercer elemento, process.argv[2], es el primer argumento real pasado al script.
+// node script.js hola
+// # Output: El primer argumento es: hola
+
 const folder = process.argv[2] ?? '.'
 
-async function ls (folder) {
+async function ls (folder) { 
   let files
   try {
     files = await fs.readdir(folder)

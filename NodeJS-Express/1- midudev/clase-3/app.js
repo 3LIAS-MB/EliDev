@@ -8,26 +8,28 @@ const { validateMovie, validatePartialMovie } = require('./schemas/movies')
 
 const app = express()
 
-app.use(cors({
-  origin: (origin, callback) => {
-    const ACCEPTED_ORIGINS = [
-      'http://localhost:8080',
-      'http://localhost:1234',
-      'https://movies.com',
-      'https://midu.dev'
-    ]
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      const ACCEPTED_ORIGINS = [
+        'http://localhost:8080',
+        'http://localhost:1234',
+        'https://movies.com',
+        'https://midu.dev'
+      ]
 
-    if (ACCEPTED_ORIGINS.includes(origin)) {
-      return callback(null, true)
+      if (ACCEPTED_ORIGINS.includes(origin)) {
+        return callback(null, true)
+      }
+
+      if (!origin) {
+        return callback(null, true)
+      }
+
+      return callback(new Error('Not allowed by CORS'))
     }
-
-    if (!origin) {
-      return callback(null, true)
-    }
-
-    return callback(new Error('Not allowed by CORS'))
-  }
-}))
+  })
+)
 
 app.use(express.json())
 // deshabilitar el header X-Powered-By: Express
@@ -37,7 +39,7 @@ app.disable('x-powered-by')
 // las apis tiene diferentes urls que podemos llamar
 // para extraer informacíón
 app.get('/movies', (req, res) => {
-// -> PARA TODO ESTO YA EXISTEN DEPENCIAS COMO 'CORS'
+  // -> PARA TODO ESTO YA EXISTEN DEPENCIAS COMO 'CORS'
 
   // // El navegador no envia el header de 'origin'
   // // cuando la peticion es del mismo origin
@@ -49,8 +51,8 @@ app.get('/movies', (req, res) => {
 
   const { genre } = req.query
   if (genre) {
-    const filteredMovies = movies.filter(
-      movie => movie.genre.some(g => g.toLowerCase() === genre.toLowerCase())
+    const filteredMovies = movies.filter((movie) =>
+      movie.genre.some((g) => g.toLowerCase() === genre.toLowerCase())
     )
     return res.json(filteredMovies)
   }
@@ -59,7 +61,7 @@ app.get('/movies', (req, res) => {
 
 app.get('/movies/:id', (req, res) => {
   const { id } = req.params
-  const movie = movies.find(movie => movie.id === id)
+  const movie = movies.find((movie) => movie.id === id)
   if (movie) return res.json(movie)
   res.status(404).json({ message: 'Movie not found' })
 })
@@ -67,7 +69,8 @@ app.get('/movies/:id', (req, res) => {
 app.post('/movies', (req, res) => {
   const result = validateMovie(req.body)
 
-  if (result.error) { // !result.success -> devuelve un booleano
+  if (result.error) {
+    // !result.success -> devuelve un booleano
     return res.status(400).json({ error: JSON.parse(result.error.message) })
   }
 
@@ -75,18 +78,20 @@ app.post('/movies', (req, res) => {
   const newMovie = {
     // UUID -> Identificador unico universal
     id: crypto.randomUUID(),
-    ...result.data // req.body -> no es lo mismo, uno está validado y el otro no (req.body)
+    // no es lo mismo hacer esto (req.body),
+    // porque no se estaria validando
+    ...result.data
   }
   // Esto no seria REST, porque estamos guardando
   // el estado de la aplicación en memoria
   movies.push(newMovie)
-  // actualizar la caché del cliente
+  // actualizar la caché del cliente con la nueva ID
   res.status(201).json(newMovie)
 })
 
 app.delete('/movies/:id', (req, res) => {
   const { id } = req.params
-  const movieIndex = movies.findIndex(movie => movie.id === id)
+  const movieIndex = movies.findIndex((movie) => movie.id === id)
 
   if (movieIndex === -1) {
     return res.status(404).json({ message: 'Movie not found' })
@@ -100,7 +105,7 @@ app.delete('/movies/:id', (req, res) => {
 app.patch('/movies/:id', (req, res) => {
   const result = validatePartialMovie(req.body)
 
-  if (!result.success) {
+  if (!result.success) { // if (result.error)
     return res.status(400).json({ error: JSON.parse(result.error.message) })
   }
 
