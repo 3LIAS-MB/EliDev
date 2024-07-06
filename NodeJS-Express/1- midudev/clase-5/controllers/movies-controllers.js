@@ -1,5 +1,6 @@
-import { MovieModel } from '../models/local-file-system/movie-model.js'
-// import { MovieModel } from '../models/database/movie.js'
+// import { MovieModel } from '../models/local-file-system/movie-model.js'
+// import { MovieModel } from '../models/mongodb/movie-models.js'
+import { MovieModel } from '../models/mysql/movie-models.js'
 import { validateMovie, validatePartialMovie } from '../schemas/movies.js'
 
 // Es el que decide que es lo que se renderiza
