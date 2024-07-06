@@ -1,19 +1,20 @@
-import express, { json } from 'express'
-import { moviesRouter } from './ruotes/movies.js'
+import express, { json } from 'express' // require -> commonJS
+import { createMovieRouter } from './routes/movies.js'
 import { corsMiddleware } from './middlewares/cors.js'
+// import 'dotenv/config'
 
-const app = express()
-app.use(json())
-app.use(corsMiddleware())
-app.disable('x-powered-by')
+// después
+export const createApp = ({ movieModel }) => {
+  const app = express()
+  app.use(json())
+  app.use(corsMiddleware())
+  app.disable('x-powered-by')
 
-// cuando se accede a 'movies' se carga todas las rutas de moviesRouter.
-// de esta forma separamos todas las rutas que tienen q ver con '/movies'
-// convirtiense este en el prefijo
-app.use('/movies', moviesRouter)
+  app.use('/movies', createMovieRouter({ movieModel }))
 
-const PORT = process.env.PORT ?? 1234
+  const PORT = process.env.PORT ?? 1234
 
-app.listen(PORT, () => {
-  console.log(`server listening on port http://localhost:${PORT}`)
-})
+  app.listen(PORT, () => {
+    console.log(`server listening on port http://localhost:${PORT}`)
+  })
+}

@@ -2,9 +2,9 @@
 GET http://localhost:1234/movies
 
 ### RECUPERAR UNA PELICULA POR ID
-GET http://localhost:1234/movies/04986507-b3ed-442c-8ae7-4c5df804f896
+GET http://localhost:1234/movies/853a01ca-3b39-11ef-948a-f02f7419c768
 
-### RECUPERAR TODAS LAS PELICULAS POR UN GENERO
+### RECUPERAR TODAS LAS PELICULAS POR UN GENERO -> TAREA
 GET http://localhost:1234/movies?genre=Adventure
 
 ### CREAR UNA PELICULA CON POST
