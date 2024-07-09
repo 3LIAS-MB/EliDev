@@ -1,3 +1,0 @@
-let texto = "jola";
-
-texto.
