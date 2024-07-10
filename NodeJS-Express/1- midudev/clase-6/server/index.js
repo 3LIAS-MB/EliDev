@@ -2,28 +2,38 @@ import express from 'express'
 import logger from 'morgan'
 import dotenv from 'dotenv'
 import { createClient } from '@libsql/client'
-
+// Importamos la creacion de un servidor de web socket
 import { Server } from 'socket.io'
+// Modulo par apoder crear servidores http
 import { createServer } from 'node:http'
+
+import mysql from 'mysql2/promise'
 
 dotenv.config()
 
 const port = process.env.PORT ?? 3000
-
+// también es un servidor http
 const app = express()
 const server = createServer(app)
+// Esto lo hacemos para tener todo en un solo servidor
+// Express y Web Socket juntos en un solo sitio
 const io = new Server(server, {
   connectionStateRecovery: {}
 })
 
-const db = createClient({
-  url: 'libsql://cuddly-wasp-midudev.turso.io',
-  authToken: process.env.DB_TOKEN
-})
+const DEFAULT_CONFIG = {
+  host: 'localhost',
+  user: 'root',
+  port: 3306,
+  password: 'S436339133xd',
+  database: 'chat_realtime'
+}
+
+const db = await mysql.createConnection(DEFAULT_CONFIG)
 
 await db.execute(`
   CREATE TABLE IF NOT EXISTS messages (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     content TEXT,
     user TEXT
   )
@@ -41,26 +51,20 @@ io.on('connection', async (socket) => {
     const username = socket.handshake.auth.username ?? 'anonymous'
     console.log({ username })
     try {
-      result = await db.execute({
-        sql: 'INSERT INTO messages (content, user) VALUES (:msg, :username)',
-        args: { msg, username }
-      })
+      [result] = await db.execute('INSERT INTO messages (content, user) VALUES (?, ?)', [msg, username])
     } catch (e) {
       console.error(e)
       return
     }
 
-    io.emit('chat message', msg, result.lastInsertRowid.toString(), username)
+    io.emit('chat message', msg, result.insertId.toString(), username)
   })
 
   if (!socket.recovered) { // <- recuperase los mensajes sin conexión
     try {
-      const results = await db.execute({
-        sql: 'SELECT id, content, user FROM messages WHERE id > ?',
-        args: [socket.handshake.auth.serverOffset ?? 0]
-      })
+      const [results] = await db.execute('SELECT id, content, user FROM messages WHERE id > ?', [socket.handshake.auth.serverOffset ?? 0])
 
-      results.rows.forEach(row => {
+      results.forEach(row => {
         socket.emit('chat message', row.content, row.id.toString(), row.user)
       })
     } catch (e) {
@@ -72,9 +76,10 @@ io.on('connection', async (socket) => {
 app.use(logger('dev'))
 
 app.get('/', (req, res) => {
+  // process.cwd() -> la carpeta en la que se inicializó el proceso
   res.sendFile(process.cwd() + '/client/index.html')
 })
 
 server.listen(port, () => {
-  console.log(`Server running on port ${port}`)
+  console.log(`Server running on port http://localhost:${port}/`)
 })

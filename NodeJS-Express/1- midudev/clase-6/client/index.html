@@ -7,6 +7,8 @@
   <title>miduChat</title>
 
   <script type="module">
+    // importamos el cliente de socket.io
+    // En vanilla JS se puede importar directamente una dependencia/b externa
     import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
 
     const getUsername = async () => {
@@ -62,6 +64,7 @@
       box-sizing: border-box;
     }
 
+    /*Modo oscuro*/
     :root {
       color-scheme: light dark;
     }
